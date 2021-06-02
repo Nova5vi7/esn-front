@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import React, { useState } from "react";
-import { useDispatch, useSelector } from 'react-redux'//* Хуки для использования REDUX
-import setProducts from "../store/actions/set-products"
-import featchData from "../helpers/featch_data"
-import { initializeStore } from '../store/'
+import setProducts from "../store/actions/set-products";
+import featchData from "../helpers/featch_data";
+import { initializeStore } from '../store/';
 
 
 const Home = () => {
