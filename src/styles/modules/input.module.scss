@@ -1,0 +1,31 @@
+.inputWrap {
+	position: relative;
+	width: 100%;
+	margin-bottom: 37px;
+
+	&:last-child {
+		margin: 0;
+	}
+
+	input,
+	input::placeholder {
+		font-weight: 300;
+		color: rgba(255, 255, 255, 0.6);
+	}
+
+	input {
+		width: 100%;
+		padding: 10px 10px 10px 0;
+		border: none;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+		background-color: inherit;
+		font-size: 18px;
+		line-height: 1.16;
+
+		&::placeholder {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.btn_wrap button {
+	background-color: #833ac7;
+	padding: 12.5px 26.5px;
+	border: none;
+	box-shadow: 0px 9px 8px rgba(0, 0, 0, 0.36);
+	border-radius: 10px;
+	font-size: 20px;
+	line-height: 1.15;
+	color: #fff;
+	cursor: pointer;
+
+	&:active {
+		box-shadow: none;
+	}
+}
