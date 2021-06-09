@@ -5,7 +5,7 @@ import style from "../styles/modules/container.module.scss"
 export default function Container({ title, children }) {
 	return (
 		<div className={style.form_container}>
-			<Title>{title}</Title>
+			<Title className={style.title}>{title}</Title>
 
 			{children}
 		</div>

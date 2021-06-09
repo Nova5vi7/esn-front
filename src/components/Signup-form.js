@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import styles from "../styles/modules/forms.module.scss"
-import { Formik } from "formik";
+import signUp from "../services/sign-up"
+import { Formik, Form, Field } from "formik";
+import isValidName from "../verifiers/is-valid-name";
+import isValidEmail from "../verifiers/is-valid-email";
+import isValidPassword from "../verifiers/is-valid-password";
 import Input from "./Input";
 import Button from "./Button";
 import stylesInput from "../styles/modules/input.module.scss"
 import stylesButton from "../styles/modules/button.module.scss"
 
+
 export default function SignUpForm() {
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
+	const handleSubmit = (data) => {
+		signUp(data)
 	};
 
 	return (
-		<div className={styles.formsSingUp} onSubmit={handleSubmit}>
+		<div className={styles.formsSingUp} >
 			<Formik
 				initialValues={{//начальное значение полей ввода
 					name: '',
@@ -21,45 +26,46 @@ export default function SignUpForm() {
 					password: '',
 				}}
 
-				onSubmit={(values) => { console.log(values) }} //метод вызывающий функцию при отправке формы
+				onSubmit={handleSubmit} //метод вызывающий функцию при отправке формы
 			>
 				{({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
-					<>
-						<Input
-							type="name"
-							placeholder="Name"
-							inputName="name"
-							className={stylesInput.name}
-							classInputWrap={`${stylesInput.inputWrap} ${stylesInput.nameWrap}`}
-							value={values.name}
-							handleBlur={handleBlur}
-							handleChange={handleChange}
-						/>
+					<Form>
+						<div className={`${stylesInput.inputWrap} ${stylesInput.nameWrap}`}>
+							<Field
+								type="name"
+								placeholder="Name"
+								name="name"
+								className={stylesInput.name}
+								validate={isValidName}
+							/>
+							{errors.name && touched.name && <div className={stylesInput.error}>{errors.name}</div>}
+						</div>
 
-						<Input
-							type="email"
-							placeholder="Email"
-							inputName="email"
-							className={stylesInput.email}
-							classInputWrap={`${stylesInput.inputWrap} ${stylesInput.emailWrap}`}
-							value={values.email}
-							handleBlur={handleBlur}
-							handleChange={handleChange}
-						/>
+						<div className={`${stylesInput.inputWrap} ${stylesInput.emailWrap}`}>
+							<Field
+								type="email"
+								placeholder="Email"
+								name="email"
+								className={stylesInput.email}
+								validate={isValidEmail}
+							/>
+							{errors.email && touched.email && <div className={stylesInput.error}>{errors.email}</div>}
+						</div>
 
-						<Input
-							type="password"
-							placeholder="Password"
-							inputName="password"
-							className={stylesInput.password}
-							classInputWrap={`${stylesInput.inputWrap} ${stylesInput.passwordWrap}`}
-							value={values.password}
-							handleBlur={handleBlur}
-							handleChange={handleChange}
-						/>
+						<div className={`${stylesInput.inputWrap} ${stylesInput.passwordWrap}`}>
+							<Field
+								type="password"
+								placeholder="Password"
+								name="password"
+								className={stylesInput.password}
+								value={values.password}
+								validate={isValidPassword}
+							/>
+							{errors.password && touched.password && <div className={stylesInput.error}>{errors.password}</div>}
+						</div>
 
-						<Button className={stylesButton.btn_sing_in} handleSubmit={handleSubmit} valid={isValid} dirty={dirty}>Sign Up</Button>
-					</>
+						<Button className={stylesButton.btn_sing_in} handleSubmit={handleSubmit} valid={isValid} dirty={dirty}>Sign up</Button>
+					</Form>
 				)}
 			</Formik>
 		</div>

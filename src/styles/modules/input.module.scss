@@ -1,7 +1,11 @@
+@import "../mixin";
+@import "../fonts";
+@import "../vars";
+
 .inputWrap {
 	position: relative;
 	width: 100%;
-	margin-bottom: 37px;
+	margin-bottom: 28px;
 
 	&:last-child {
 		margin: 0;
@@ -13,19 +17,40 @@
 		color: rgba(255, 255, 255, 0.6);
 	}
 
+	input,
+	.error {
+		@include fontPlexSans();
+	}
+
 	input {
+		position: relative;
 		width: 100%;
-		padding: 10px 10px 10px 0;
-		border: none;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-		background-color: inherit;
-		font-size: 18px;
-		line-height: 1.16;
+		padding: 16px;
+		background: $bright;
+		border: 1px solid $shade;
+		box-sizing: border-box;
+		box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+		border-radius: 6px;
+		color: $muted;
+		font-size: 16px;
+		line-height: 1.25;
+
+		&:focus {
+			border: 1px solid $accent;
+		}
 
 		&::placeholder {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
+			color: $muted;
+			font-size: 16px;
+			line-height: 1.25;
 		}
+	}
+
+	.error {
+		position: absolute;
+		bottom: -20px;
+		font-size: 14px;
+		line-height: 1.28;
+		color: $error;
 	}
 }

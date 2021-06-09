@@ -1,14 +1,16 @@
 @import "../mixin";
+@import "../fonts";
+@import "../vars";
 
 .link_wrap {
 	@include displayFlex();
 
 	p,
 	a {
-		font-size: 17px;
-		line-height: 1.14;
-		color: rgba(255, 255, 255, 0.6);
-		@include fontRoboto();
+		@include fontPlexSans();
+		font-size: 16px;
+		line-height: 1.37;
+		color: $primary;
 	}
 
 	a {
@@ -18,5 +20,6 @@
 		padding: 0;
 		margin-left: 5px;
 		cursor: pointer;
+		color: $muted;
 	}
 }

@@ -1,3 +1,3 @@
-export const SIGNUP_FORM = "SIGNUP_FORM";
-export const LOGIN_FORM = "LOGIN_FORM";
-export const FORGOTPAS_FORM = "FORGOTPAS_FORM";
+export const SIGNUP_URL = 'user/sign-up';
+export const LOGIN_URL = 'user/sign-in';
+// export const FORGOTPAS_URL = 'user/';
