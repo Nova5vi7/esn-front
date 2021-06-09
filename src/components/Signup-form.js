@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../styles/modules/forms.module.scss"
 import signUp from "../services/sign-up"
 import { Formik, Form, Field } from "formik";
 import isValidName from "../verifiers/is-valid-name";
 import isValidEmail from "../verifiers/is-valid-email";
 import isValidPassword from "../verifiers/is-valid-password";
-import Input from "./Input";
 import Button from "./Button";
 import stylesInput from "../styles/modules/input.module.scss"
 import stylesButton from "../styles/modules/button.module.scss"
 
 
-export default function SignUpForm() {
+const SignUpForm = () => {
 
 	const handleSubmit = (data) => {
 		signUp(data)
@@ -20,15 +19,15 @@ export default function SignUpForm() {
 	return (
 		<div className={styles.formsSingUp} >
 			<Formik
-				initialValues={{//начальное значение полей ввода
+				initialValues={{
 					name: '',
 					email: '',
 					password: '',
 				}}
 
-				onSubmit={handleSubmit} //метод вызывающий функцию при отправке формы
+				onSubmit={handleSubmit}
 			>
-				{({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
+				{({ values, errors, touched, isValid, handleSubmit, dirty }) => (
 					<Form>
 						<div className={`${stylesInput.inputWrap} ${stylesInput.nameWrap}`}>
 							<Field
@@ -71,3 +70,5 @@ export default function SignUpForm() {
 		</div>
 	);
 }
+
+export default SignUpForm;

@@ -4,8 +4,6 @@ import LogInForm from "../components/Login-form"
 import Container from "../components/Сontainer"
 import Link from "../components/Link"
 
-
-
 const SingIn = () => (
 	<FormContainer>
 		<Container title="Sing In">
@@ -19,8 +17,5 @@ const SingIn = () => (
 		</Container>
 	</FormContainer>
 )
-
-
-
 
 export default SingIn

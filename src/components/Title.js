@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Title({ children, className }) {
-	return (
-		<>
-			<h1 className={className}>{children}</h1>
-		</>
-	);
-}
+const Title = ({ children, className }) => (
+	<>
+		<h1 className={className}>{children}</h1>
+	</>
+);
+
+export default Title;

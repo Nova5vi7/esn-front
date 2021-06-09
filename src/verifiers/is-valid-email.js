@@ -10,7 +10,7 @@ const isValidEmail = (emailValue) => {
 	);
 };
 
-export default function validateEmail(value) {
+const validateEmail = (value) => {
 	let error;
 
 	if (!value) {
@@ -21,3 +21,5 @@ export default function validateEmail(value) {
 
 	return error;
 }
+
+export default validateEmail;

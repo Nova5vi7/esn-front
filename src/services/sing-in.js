@@ -7,7 +7,6 @@ const signIn = async (data) => {
 
 		const result = await fetcher.post(LOGIN_URL, data)
 		console.log(result.data)
-		// window.localStorage.setItem('token', result.data);
 		return result.data
 
 	} catch (e) {

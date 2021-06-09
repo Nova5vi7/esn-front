@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-// import styles from "../styles/modules/input.module.scss"
+import React from "react";
 import { Field } from "formik";
 
 
-export default function Input({ value, type, placeholder, inputName, className, classInputWrap }) {
-
+const Input = ({ value, type, placeholder, inputName, className, classInputWrap }) => {
 	return (
 		<div className={classInputWrap}>
 			<>
@@ -19,3 +17,5 @@ export default function Input({ value, type, placeholder, inputName, className, 
 		</div>
 	);
 }
+
+export default Input;

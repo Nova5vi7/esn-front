@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form, Field } from "formik";
 import styles from "../styles/modules/forms.module.scss"
 import signIn from "../services/sing-in";
 import isValidEmail from "../verifiers/is-valid-email";
 import isValidPassword from "../verifiers/is-valid-password";
-import Input from "./Input";
 import Button from "./Button";
 import stylesInput from "../styles/modules/input.module.scss"
 import stylesButton from "../styles/modules/button.module.scss"
 
 
-export default function LogInForm() {
+const LogInForm = () => {
 
 	const handleSubmit = (data) => {
 		signIn(data)
@@ -52,7 +51,6 @@ export default function LogInForm() {
 							{errors.password && touched.password && <div>{errors.password}</div>}
 						</div>
 
-
 						<Button className={stylesButton.btn_sing_in} handleSubmit={handleSubmit} valid={isValidating} dirty={dirty}>Sign in</Button>
 					</Form>
 				)}
@@ -61,3 +59,5 @@ export default function LogInForm() {
 		</div>
 	);
 }
+
+export default LogInForm;

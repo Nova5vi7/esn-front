@@ -9,7 +9,7 @@ const isValidPassword = (passwordValue) => {
 	);
 };
 
-export default function validatePassword(value) {
+const validatePassword = (value) => {
 	let error;
 
 	if (!value) {
@@ -20,3 +20,5 @@ export default function validatePassword(value) {
 
 	return error;
 }
+
+export default validatePassword;

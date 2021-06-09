@@ -9,7 +9,7 @@ const isValidName = (nameValue) => {
 	);
 };
 
-export default function validateName(value) {
+const validateName = (value) => {
 	let error;
 
 	if (!value) {
@@ -20,3 +20,5 @@ export default function validateName(value) {
 
 	return error;
 }
+
+export default validateName;
