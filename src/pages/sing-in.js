@@ -6,21 +6,21 @@ import Link from "../components/Link"
 
 
 
-export default function SingIn() {
+const SingIn = () => (
+	<FormContainer>
+		<Container title="Sing In">
+			<LogInForm />
+			<Link
+				text="Don’t have anu account yet?"
+				linkText="Sing Up"
+				linkHrf="/sing-up"
+				className="links-log"
+			/>
+		</Container>
+	</FormContainer>
+)
 
 
-	return (
-		<FormContainer>
-			<Container title="Sing In">
-				<LogInForm />
-				<Link
-					text="Don’t have anu account yet?"
-					linkText="Sing Up"
-					linkHrf="/sing-up"
-					className="links-log"
-				/>
-			</Container>
-		</FormContainer>
 
-	)
-}
+
+export default SingIn
