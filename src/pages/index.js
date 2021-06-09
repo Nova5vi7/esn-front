@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { initializeStore } from '../store/';
 
 
 const Home = () => {
-
 	return (
 		<div className="container">
 			<Head>
