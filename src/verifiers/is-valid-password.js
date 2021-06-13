@@ -1,11 +1,8 @@
-//Keni123men = true
-//Keni123 = false
-//Keni123n = true
-//Kenimenkeni = false
+import { VARIFIERS_PASSWORD } from "../constant/varifiers"
 
 const isValidPassword = (passwordValue) => {
 	return Boolean(
-		!passwordValue.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/)
+		!passwordValue.match(VARIFIERS_PASSWORD)
 	);
 };
 

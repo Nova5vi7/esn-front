@@ -1,11 +1,8 @@
-//Ro = true
-//ro = true
-//r = false
-//Ro1 = false
+import { VARIFIERS_NAME } from "../constant/varifiers";
 
 const isValidName = (nameValue) => {
 	return Boolean(
-		!nameValue.match(/^(?=[a-zA-Z._]{1,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/)
+		!nameValue.match(VARIFIERS_NAME)
 	);
 };
 

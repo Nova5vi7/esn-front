@@ -1,11 +1,11 @@
 import React from "react";
-import ForgotPas from "../components/Forgot-password-form"
-import Container from "../components/Сontainer"
-import Link from "../components/Link"
+import ForgotPas from "../components/forgot-password-form"
+import Container from "../components/container"
+import Link from "../components/link"
 
 
 
-export default function ForgotPass() {
+const ForgotPass = () => {
 
 
 	return (
@@ -20,3 +20,5 @@ export default function ForgotPass() {
 		</Container>
 	)
 }
+
+export default ForgotPass

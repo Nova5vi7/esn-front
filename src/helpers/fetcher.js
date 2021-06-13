@@ -1,8 +1,9 @@
 import axios from 'axios'
+import { BASE_URL } from "../constant/common"
 
 const fetcher = () => {
 	const inst = axios.create({
-		baseURL: 'http://localhost:5000/api/',
+		baseURL: BASE_URL,
 	})
 
 	inst.interceptors.request.use((config) => {

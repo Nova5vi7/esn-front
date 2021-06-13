@@ -1,11 +1,9 @@
-//test@robot.com = true
-//test@robot.ru = true
-//test@robot-ru = false
+import { VARIFIERS_EMAIL } from "../constant/varifiers"
 
 const isValidEmail = (emailValue) => {
 	return Boolean(
 		!emailValue.match(
-			/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+			VARIFIERS_EMAIL
 		)
 	);
 };

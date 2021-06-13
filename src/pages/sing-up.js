@@ -1,19 +1,17 @@
 import React from "react";
-import FormContainer from "../components/Form-container"
-import SignUpForm from "../components/Signup-form"
-import Container from "../components/Сontainer"
-import Link from "../components/Link"
+import FormContainer from "../components/form-container"
+import SignUpForm from "../components/signup-form"
+import Container from "../components/container"
 
 const SingUp = () => (
 	<FormContainer>
-		<Container title="Sing Up">
+		<Container title="Sing Up"
+			text="Already have an account?"
+			linkText="Sing In"
+			linkHrf="/sing-in">
+
 			<SignUpForm />
-			<Link
-				text="Already have an account?"
-				linkText="Sing In"
-				linkHrf="/sing-in"
-				className="links-log"
-			/>
+
 		</Container>
 	</FormContainer>
 

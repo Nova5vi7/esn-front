@@ -1,13 +1,13 @@
 import React from "react";
 import { Formik } from "formik";
 import styles from "../styles/modules/forms.module.scss"
-import Input from "./Input";
-import Button from "./Button";
+import Input from "./input";
+import Button from "./button";
 import stylesInput from "../styles/modules/input.module.scss"
 import stylesButton from "../styles/modules/button.module.scss"
 
 
-export default function LogInForm({ onSubmit }) {
+const LogInForm = ({ onSubmit }) => {
 
 	return (
 		<div className={styles.formsLogIn}>
@@ -40,3 +40,5 @@ export default function LogInForm({ onSubmit }) {
 		</div>
 	);
 }
+
+export default LogInForm
