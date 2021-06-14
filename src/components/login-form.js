@@ -1,64 +1,79 @@
-import React from "react";
-import { Formik, Form, Field } from "formik";
-import styles from "../styles/modules/forms.module.scss"
-import signIn from "../services/sing-in";
-import isValidEmail from "../verifiers/is-valid-email";
-import isValidPassword from "../verifiers/is-valid-password";
-import Button from "./button";
-import Input from "./input";
-import stylesInput from "../styles/modules/input.module.scss"
-import stylesButton from "../styles/modules/button.module.scss"
+import React from 'react';
+import { Formik, Form, Field } from 'formik';
+import styles from '../styles/modules/forms.module.scss';
+import signIn from '../services/sing-in';
+import isValidEmail from '../verifiers/is-valid-email';
+import isValidPassword from '../verifiers/is-valid-password';
+import Button from './button';
+import Input from './input';
+import Title from './title';
+import Link from './link';
 
+const captions = {
+  title: 'Sing In',
+  text: 'Don’t have anu account yet?',
+  linkText: 'Sing Up',
+  href: '/sing-up'
+};
 
 const LogInForm = () => {
+  const { title, text, linkText, href } = captions;
 
-	const handleSubmit = async (data) => {
-		await signUp(data)
-	};
+  const handleSubmit = async data => {
+    await signIn(data);
+  };
 
-	return (
-		<Formik
-			initialValues={{
-				email: '',
-				password: '',
-			}}
+  return (
+    <div className={styles.form_container}>
+      <Title>{title}</Title>
 
-			onSubmit={handleSubmit}
-		>
+      <Formik
+        initialValues={{
+          email: '',
+          password: ''
+        }}
+        onSubmit={handleSubmit}
+      >
+        {({ values, isValidating, handleSubmit, dirty }) => (
+          <Form className={styles.formsLogIn}>
+            <div className={styles.inputWrap}>
+              <Field
+                type="email"
+                placeholder="Email"
+                name="email"
+                validate={isValidEmail}
+                component={Input}
+              />
+            </div>
 
-			{({ values, errors, touched, isValidating, handleSubmit, dirty }) => (
-				<Form className={styles.formsLogIn}>
-					<div className={`${stylesInput.inputWrap} ${stylesInput.emailWrap}`}>
-						<Field
-							type="email"
-							placeholder="Email"
-							name="email"
-							className={stylesInput.email}
-							validate={isValidEmail}
-							component={Input}
+            <div className={styles.inputWrap}>
+              <Field
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={values.password}
+                validate={isValidPassword}
+                component={Input}
+              />
+            </div>
 
-						/>
-					</div>
+            <Button
+              handleSubmit={handleSubmit}
+              valid={isValidating}
+              dirty={dirty}
+            >
+              Sign in
+            </Button>
+          </Form>
+        )}
+      </Formik>
 
-					<div className={`${stylesInput.inputWrap} ${stylesInput.passwordWrap}`}>
-						<Field
-							type="password"
-							placeholder="Password"
-							name="password"
-							className={stylesInput.password}
-							value={values.password}
-							validate={isValidPassword}
-							component={Input}
-
-						/>
-					</div>
-
-					<Button className={stylesButton.btn_sing_in} handleSubmit={handleSubmit} valid={isValidating} dirty={dirty}>Sign in</Button>
-				</Form>
-			)}
-
-		</Formik>
-	);
-}
+      <div className={styles.link_wrap}>
+        <p>{text}</p>
+        <Link href={href}>{linkText}</Link>
+      </div>
+    </div>
+  );
+};
 
 export default LogInForm;

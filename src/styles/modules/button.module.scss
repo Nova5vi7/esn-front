@@ -1,13 +1,12 @@
 @import "../mixin";
 @import "../fonts";
-@import "../vars";
 
 .btn_wrap {
 	width: 100%;
 
 	button {
 		width: 100%;
-		background-color: $accent;
+		background-color: var(--accent);
 		padding: 18px 20px;
 		border: none;
 		box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
@@ -21,7 +20,7 @@
 		transition: all 0.3s ease;
 
 		&:hover {
-			background-color: #076c94;
+			background-color: var(--btn-hover);
 		}
 	}
 }

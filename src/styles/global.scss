@@ -1,6 +1,5 @@
 @import "_mixin.scss";
 @import "_fonts";
-@import "_vars";
 
 * {
 	outline: none;
@@ -17,7 +16,7 @@ body {
 	position: relative;
 	margin: 0;
 	@include fontPlexSans();
-	color: $bright;
+	color: var(--bright);
 }
 
 h1,

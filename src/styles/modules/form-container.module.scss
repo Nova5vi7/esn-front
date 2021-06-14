@@ -1,6 +1,5 @@
 @import "../mixin";
 @import "../fonts";
-@import "../vars";
 
 .formContainer {
 	width: 100%;
@@ -16,7 +15,7 @@
 	}
 
 	.blockLeft {
-		background-color: $primary;
+		background-color: var(--primary);
 		justify-content: flex-end;
 
 		.content {

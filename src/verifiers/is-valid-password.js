@@ -1,21 +1,19 @@
-import { VARIFIERS_PASSWORD } from "../constant/varifiers"
+import { VARIFIERS_PASSWORD } from '../constant/varifiers';
 
-const isValidPassword = (passwordValue) => {
-	return Boolean(
-		!passwordValue.match(VARIFIERS_PASSWORD)
-	);
+const isValidPassword = passwordValue => {
+  return Boolean(!VARIFIERS_PASSWORD.test(passwordValue));
 };
 
-const validatePassword = (value) => {
-	let error;
+const validatePassword = value => {
+  let error;
 
-	if (!value) {
-		error = "Required";
-	} else if (isValidPassword(value)) {
-		error = "Invalid password";
-	}
+  if (!value) {
+    error = 'Required';
+  } else if (isValidPassword(value)) {
+    error = 'Invalid password';
+  }
 
-	return error;
-}
+  return error;
+};
 
 export default validatePassword;

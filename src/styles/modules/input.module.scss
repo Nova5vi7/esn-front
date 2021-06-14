@@ -1,56 +1,45 @@
 @import "../mixin";
 @import "../fonts";
-@import "../vars";
 
-.inputWrap {
+.input,
+.input::placeholder {
+	font-weight: 300;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.input,
+.error {
+	@include fontPlexSans();
+}
+
+.input {
 	position: relative;
 	width: 100%;
-	margin-bottom: 28px;
+	padding: 16px;
+	background: var(--bright);
+	border: 1px solid var(--shade);
+	box-sizing: border-box;
+	box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+	border-radius: 6px;
+	color: var(--muted);
+	font-size: 16px;
+	line-height: 1.25;
 
-	&:last-child {
-		margin: 0;
+	&:focus {
+		border: 1px solid var(--accent);
 	}
 
-	input,
-	input::placeholder {
-		font-weight: 300;
-		color: rgba(255, 255, 255, 0.6);
-	}
-
-	input,
-	.error {
-		@include fontPlexSans();
-	}
-
-	input {
-		position: relative;
-		width: 100%;
-		padding: 16px;
-		background: $bright;
-		border: 1px solid $shade;
-		box-sizing: border-box;
-		box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
-		border-radius: 6px;
-		color: $muted;
+	&::placeholder {
+		color: var(--muted);
 		font-size: 16px;
 		line-height: 1.25;
-
-		&:focus {
-			border: 1px solid $accent;
-		}
-
-		&::placeholder {
-			color: $muted;
-			font-size: 16px;
-			line-height: 1.25;
-		}
 	}
+}
 
-	.error {
-		position: absolute;
-		bottom: -20px;
-		font-size: 14px;
-		line-height: 1.28;
-		color: $error;
-	}
+.error {
+	position: absolute;
+	bottom: -20px;
+	font-size: 14px;
+	line-height: 1.28;
+	color: var(--error);
 }

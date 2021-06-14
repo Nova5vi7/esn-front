@@ -1,20 +1,11 @@
-import React from "react";
-import FormContainer from "../components/form-container"
-import SignUpForm from "../components/signup-form"
-import Container from "../components/container"
+import React from 'react';
+import FormWrap from '../components/form-wrap';
+import SignUpForm from '../components/signup-form';
 
 const SingUp = () => (
-	<FormContainer>
-		<Container title="Sing Up"
-			text="Already have an account?"
-			linkText="Sing In"
-			linkHrf="/sing-in">
-
-			<SignUpForm />
-
-		</Container>
-	</FormContainer>
-
-)
+  <FormWrap>
+    <SignUpForm />
+  </FormWrap>
+);
 
 export default SingUp;

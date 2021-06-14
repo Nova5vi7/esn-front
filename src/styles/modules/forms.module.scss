@@ -1,5 +1,50 @@
+@import "../mixin";
+@import "../fonts";
+
+.form_container {
+	max-width: 409px;
+	width: 100%;
+	height: 100%;
+	@include displayFlex();
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-left: 125px;
+}
+
 .formsLogIn,
 .formsSingUp {
 	width: 100%;
 	margin-bottom: 100px;
+}
+.inputWrap {
+	position: relative;
+	width: 100%;
+	margin-bottom: 28px;
+
+	&:last-child {
+		margin: 0;
+	}
+}
+
+.link_wrap {
+	@include displayFlex();
+
+	p,
+	a {
+		@include fontPlexSans();
+		font-size: 16px;
+		line-height: 1.37;
+		color: var(--primary);
+	}
+
+	a {
+		text-decoration: underline;
+		background-color: inherit;
+		border: none;
+		padding: 0;
+		margin-left: 5px;
+		cursor: pointer;
+		color: var(--muted);
+	}
 }

@@ -1,21 +1,19 @@
-import { VARIFIERS_NAME } from "../constant/varifiers";
+import { VARIFIERS_NAME } from '../constant/varifiers';
 
-const isValidName = (nameValue) => {
-	return Boolean(
-		!nameValue.match(VARIFIERS_NAME)
-	);
+const isValidName = nameValue => {
+  return Boolean(!VARIFIERS_NAME.test(nameValue));
 };
 
-const validateName = (value) => {
-	let error;
+const validateName = value => {
+  let error;
 
-	if (!value) {
-		error = "Required";
-	} else if (isValidName(value)) {
-		error = "Invalid name";
-	}
+  if (!value) {
+    error = 'Required';
+  } else if (isValidName(value)) {
+    error = 'Invalid name';
+  }
 
-	return error;
-}
+  return error;
+};
 
 export default validateName;
