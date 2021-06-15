@@ -1,14 +1,15 @@
+import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import styles from '../styles/modules/forms.module.scss';
+
 import signUp from '../services/sign-up';
-import { Formik, Form, Field } from 'formik';
-import isValidName from '../verifiers/is-valid-name';
+import styles from '../styles/modules/forms.module.scss';
 import isValidEmail from '../verifiers/is-valid-email';
+import isValidName from '../verifiers/is-valid-name';
 import isValidPassword from '../verifiers/is-valid-password';
 import Button from './button';
 import Input from './input';
-import Title from './title';
 import Link from './link';
+import Title from './title';
 
 const captions = {
   title: 'Sing Up',

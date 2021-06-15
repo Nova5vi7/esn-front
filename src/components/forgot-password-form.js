@@ -1,23 +1,21 @@
-import React from 'react';
 import { Formik } from 'formik';
+import React from 'react';
+
 import styles from '../styles/modules/forms.module.scss';
-import Input from './input';
 import Button from './button';
+import Input from './input';
 
 const LogInForm = ({ onSubmit }) => {
   return (
     <div className={styles.formsLogIn}>
       <Formik
         initialValues={{
-          //начальное значение полей ввода
           email: ''
         }}
-        onSubmit={onSubmit} //метод вызывающий функцию при отправке формы
+        onSubmit={onSubmit}
       >
         {({
           values,
-          errors,
-          touched,
           handleChange,
           handleBlur,
           isValid,
@@ -29,15 +27,14 @@ const LogInForm = ({ onSubmit }) => {
               type="email"
               placeholder="Email"
               inputName="email"
-              className={stylesInput.email}
-              classInputWrap={`${stylesInput.inputWrap} ${stylesInput.emailWrap}`}
+              className={styles.email}
               value={values.email}
               handleBlurTwo={handleBlur}
               handleChange={handleChange}
             />
 
             <Button
-              className={stylesButton.btn_sing_in}
+              className={styles.btn_sing_in}
               handleSubmit={handleSubmit}
               valid={isValid}
               dirty={dirty}

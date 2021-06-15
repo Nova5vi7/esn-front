@@ -1,5 +1,6 @@
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
+
 import styles from '../styles/modules/form-container.module.scss';
 
 const FormWrap = ({ children }) => (

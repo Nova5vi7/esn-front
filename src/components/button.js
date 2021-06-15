@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styles from '../styles/modules/button.module.scss';
 
 const Button = ({ children, className, handleSubmit, valid, dirty }) => {

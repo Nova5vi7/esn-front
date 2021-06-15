@@ -1,8 +1,9 @@
 import { useMemo } from 'react';
 import { applyMiddleware, createStore } from 'redux';
-import createRootReducer from './reducers/';
 import { composeWithDevTools } from 'redux-devtools-extension';
+
 import initialState from './initialState';
+import createRootReducer from './reducers/';
 
 //TODO Продолжить правки стора
 

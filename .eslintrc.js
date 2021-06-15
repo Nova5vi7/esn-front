@@ -28,10 +28,22 @@ module.exports = {
     'plugin:react-hooks/recommended'
   ],
   rules: {
-    'no-console': 'error',
-    'react/react-in-jsx-scope': 'off',
+    'no-console': 'off',
     'react/prop-types': 'off',
-    'simple-import-sort/sort': 'error',
-    'unicorn/filename-case': 'off'
+    'simple-import-sort/imports': 'error',
+    'unicorn/filename-case': 'off',
+    'unicorn/prefer-module': 'off',
+    'sonarjs/no-small-switch': 'off',
+    'unicorn/no-abusive-eslint-disable': 'off',
+    'jsx-a11y/href-no-hash': 0,
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton']
+      }
+    ],
+    'react/react-in-jsx-scope': 'off'
   }
 };

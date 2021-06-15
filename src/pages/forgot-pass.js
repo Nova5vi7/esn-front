@@ -1,6 +1,7 @@
 import React from 'react';
-import ForgotPas from '../components/forgot-password-form';
+
 import Container from '../components/container';
+import ForgotPas from '../components/forgot-password-form';
 import Link from '../components/link';
 
 const ForgotPass = () => {

@@ -1,13 +1,14 @@
+import { Field, Form, Formik } from 'formik';
 import React from 'react';
-import { Formik, Form, Field } from 'formik';
-import styles from '../styles/modules/forms.module.scss';
+
 import signIn from '../services/sing-in';
+import styles from '../styles/modules/forms.module.scss';
 import isValidEmail from '../verifiers/is-valid-email';
 import isValidPassword from '../verifiers/is-valid-password';
 import Button from './button';
 import Input from './input';
-import Title from './title';
 import Link from './link';
+import Title from './title';
 
 const captions = {
   title: 'Sing In',
@@ -16,12 +17,12 @@ const captions = {
   href: '/sing-up'
 };
 
+const handleSubmit = async data => {
+  await signIn(data);
+};
+
 const LogInForm = () => {
   const { title, text, linkText, href } = captions;
-
-  const handleSubmit = async data => {
-    await signIn(data);
-  };
 
   return (
     <div className={styles.form_container}>
