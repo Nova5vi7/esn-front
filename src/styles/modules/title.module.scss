@@ -1,0 +1,11 @@
+@import "../mixin";
+@import "../fonts";
+
+.title {
+	@include fontPlexSans();
+	font-weight: 700;
+	font-size: 34px;
+	line-height: 1.29;
+	color: var(--primary);
+	margin-bottom: 28px;
+}
