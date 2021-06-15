@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { BASE_URL } from '../constant/common';
+import { BASE_URL } from '../config';
 
 const fetcher = () => {
   const inst = axios.create({

@@ -1,12 +1,12 @@
 import React from 'react';
 
-import FormWrap from '../components/form-wrap';
 import LogInForm from '../components/login-form';
+import Auth from '../wrappers/auth';
 
 const SingIn = () => (
-  <FormWrap>
+  <Auth>
     <LogInForm />
-  </FormWrap>
+  </Auth>
 );
 
 export default SingIn;
