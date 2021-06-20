@@ -37,7 +37,7 @@ const SignUpForm = () => {
         }}
         onSubmit={handleSubmit}
       >
-        {({ values, isValid, handleSubmit, dirty }) => (
+        {({ isValid, handleSubmit, dirty }) => (
           <Form className={styles.formsSingUp}>
             <div className={styles.inputWrap}>
               <Field
@@ -64,7 +64,6 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Password"
                 name="password"
-                value={values.password}
                 validate={isValidPassword}
                 component={Input}
               />
