@@ -37,7 +37,11 @@ const SignUpForm = () => {
         }}
         onSubmit={handleSubmit}
       >
+<<<<<<< HEAD
         {({ isValid, handleSubmit, dirty }) => (
+=======
+        {({ values, isValid, handleSubmit, dirty }) => (
+>>>>>>> 3814017abe67f31af20605955888734525d08133
           <Form className={styles.formsSingUp}>
             <div className={styles.inputWrap}>
               <Field
@@ -64,6 +68,10 @@ const SignUpForm = () => {
                 type="password"
                 placeholder="Password"
                 name="password"
+<<<<<<< HEAD
+=======
+                value={values.password}
+>>>>>>> 3814017abe67f31af20605955888734525d08133
                 validate={isValidPassword}
                 component={Input}
               />
