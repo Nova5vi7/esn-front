@@ -1,4 +1,5 @@
 import '../styles/global.scss';
+import '../styles/libs.scss';
 import '../styles/_vars.css';
 
 import { Provider } from 'react-redux';

@@ -34,18 +34,13 @@
 	}
 
 	&__userImageWrap {
+		position: relative;
 		margin-bottom: 49px;
+		
 		input {
 			display: none;
 		}
-		label {
-			color: #000;
-		}
-	}
-
-	&__userImageWrap {
-		position: relative;
-
+		
 		label {
 			position: absolute;
 			width: 65px;
@@ -60,6 +55,7 @@
 			right: 0;
 			bottom: 0;
 			cursor: pointer;
+			color: #000;
 		}
 	}
 

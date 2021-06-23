@@ -59,7 +59,7 @@ const LogInForm = () => {
             </div>
 
             <Button
-              handleSubmit={handleSubmit}
+              handleClick={handleSubmit}
               valid={isValidating}
               dirty={dirty}
             >

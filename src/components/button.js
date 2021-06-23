@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from '../styles/modules/button.module.scss';
+import style from '../styles/modules/button.module.scss';
 
-const Button = ({ children, className, handleSubmit, valid, dirty }) => (
-  <div className={styles.btn_wrap}>
+const Button = ({ children, handleClick, valid, dirty }) => (
+  <div className={style.btn_wrap}>
     <button
-      className={className}
-      onClick={handleSubmit}
+      className={style.button_submit}
+      onClick={handleClick}
       disabled={!valid && !dirty}
       type="submit"
     >

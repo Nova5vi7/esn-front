@@ -11,7 +11,7 @@ module.exports = {
     node: true,
     es6: true
   },
-  plugins: ['simple-import-sort'],
+  plugins: ['simple-import-sort', 'react-hooks'],
   settings: {
     react: {
       version: 'detect'
@@ -44,6 +44,9 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton']
       }
     ],
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    'unicorn/consistent-function-scoping': 'off',
+    'react-hooks/rules-of-hooks': 'off',
+    'unicorn/no-null': 'off'
   }
 };

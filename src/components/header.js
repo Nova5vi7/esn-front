@@ -4,7 +4,7 @@ import React from 'react';
 import style from '../styles/modules/header.module.scss';
 import Link from './link';
 
-const header = () => (
+const Header = () => (
   <div className={style.header}>
     <div className="container">
       <div className={style.header__wrap}>
@@ -19,4 +19,4 @@ const header = () => (
   </div>
 );
 
-export default header;
+export default Header;
