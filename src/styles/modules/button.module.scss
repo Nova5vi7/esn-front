@@ -1,55 +1,24 @@
 @import "../mixin";
 @import "../fonts";
 
-.btn {
-	&_wrap {
-		width: 100%;
-	
-		button {
-			width: 100%;
-			border: none;
-		}
-	
-		.button {
-			&_submit {
-				background-color: var(--accent);
-				padding: 18px 20px;
-				box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
-				border-radius: 6px;
-				@include fontPlexSans();
-				font-weight: 500;
-				font-size: 16px;
-				line-height: 1.25;
-				color: #fff;
-				cursor: pointer;
-				transition: all 0.3s ease;
-		
-				&:hover {
-					background-color: var(--btn-hover);
-				}
-			}
-		}
-	}
+.button {
+  &_submit {
+    width: 100%;
+    border: none;
+    background-color: var(--accent);
+    padding: 18px 20px;
+    box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
+    border-radius: 6px;
+    @include fontPlexSans();
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
-	&_label_wrap {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-
-		.button {
-			&_label_file {
-				width: 65px;
-				height: 65px;
-				background: var(--accent);
-				border: 2px solid #FFFFFF;
-				box-sizing: border-box;
-				border-radius: 50%;
-				@include displayFlex();
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-				color: #000;
-			}
-		}
-	}
+    &:hover {
+      background-color: var(--btn-hover);
+    }
+  }
 }

@@ -1,17 +1,17 @@
 import axios from 'axios';
 
-const verification = async data => {
-  try {
-    const result = await axios.post('https://www.google.com/', data.file, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    });
+const updateUser = async data => {
+    try {
+        const result = await axios.post('https://www.google.com/', data.file, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
 
-    return result.data;
-  } catch (error) {
-    console.error(error);
-  }
+        return result.data;
+    } catch (error) {
+        console.error(error);
+    }
 };
 
-export default verification;
+export default updateUser;
