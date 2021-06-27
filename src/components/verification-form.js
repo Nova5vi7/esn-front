@@ -36,7 +36,6 @@ const verificationForm = ({handleSubmit, filePath, handleChange, inputRef, handl
                                 inputRef={inputRef}
                             />
                             <div className={style.verificationForm__image}>
-                                {/*<Image src={filePath} alt="User" width={223} height={223}/>*/}
                                 {filePath && (<CropperImage image={filePath}/>)}
                             </div>
 
