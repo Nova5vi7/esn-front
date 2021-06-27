@@ -11,7 +11,18 @@ import InputFile from './input-file';
 import InputPhone from './input-phone';
 import CropperImage from "./cropper-image";
 
-const verificationForm = ({handleSubmit, filePath, handleChange, inputRef, handleInputClick}) => (
+const verificationForm = ({
+                              handleSubmit,
+                              filePath,
+                              handleChange,
+                              inputRef,
+                              handleInputClick,
+                              crop,
+                              setCrop,
+                              zoom,
+                              setZoom,
+                              onCropComplete
+                          }) => (
     <div className={style.verificationForm}>
         <div className={style.verificationForm__formWrap}>
             <Formik
@@ -36,7 +47,15 @@ const verificationForm = ({handleSubmit, filePath, handleChange, inputRef, handl
                                 inputRef={inputRef}
                             />
                             <div className={style.verificationForm__image}>
-                                {filePath && (<CropperImage image={filePath}/>)}
+                                {filePath && (<CropperImage
+                                    image={filePath}
+                                    crop={crop}
+                                    setCrop={setCrop}
+                                    zoom={zoom}
+                                    setZoom={setZoom}
+                                    onCropComplete={onCropComplete}
+                                    aspect={1}
+                                />)}
                             </div>
 
                             <div className={style.btn_label_wrap}>
