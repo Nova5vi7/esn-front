@@ -14,7 +14,7 @@ import InputPhone from './input-phone';
 import CropperImage from "./cropper-image";
 
 const verificationForm = () => {
-    const [filePath, setFilePath] = useState('/images/user-plug.png');
+    const [filePath, setFilePath] = useState(null);
     const [file, setFile] = useState(null);
 
     const inputRef = React.useRef();
@@ -48,6 +48,7 @@ const verificationForm = () => {
         await updateUser(data);
     };
 
+    console.log(filePath)
     return (
         <div className={style.verificationForm}>
             <div className={style.verificationForm__formWrap}>
@@ -74,7 +75,7 @@ const verificationForm = () => {
                                 />
                                 <div className={style.verificationForm__image}>
                                     {/*<Image src={filePath} alt="User" width={223} height={223}/>*/}
-                                    <CropperImage image={filePath}/>
+                                    {filePath && (<CropperImage image={filePath}/>)}
                                 </div>
 
                                 <div className={style.btn_label_wrap}>

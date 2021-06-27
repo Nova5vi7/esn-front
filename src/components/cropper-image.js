@@ -11,7 +11,6 @@ const CropperImage = ({image}) => {
     const onCropComplete = () => {
     };
 
-    //TODO ПОКА НЕ РАБОТАЕТ
     console.log(image)
 
     return (
