@@ -3,10 +3,10 @@ import React from 'react';
 import SignUpForm from '../components/signup-form';
 import Auth from '../wrappers/auth';
 
-const SingUp = () => (
+const SignUp = () => (
     <Auth>
         <SignUpForm/>
     </Auth>
 );
 
-export default SingUp;
+export default SignUp;

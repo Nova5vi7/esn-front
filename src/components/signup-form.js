@@ -12,10 +12,10 @@ import Link from './link';
 import Title from './title';
 
 const captions = {
-    title: 'Sing Up',
+    title: 'Sign Up',
     text: 'Already have an account?',
-    linkText: 'Sing In',
-    href: '/sing-in'
+    linkText: 'Sign In',
+    href: '/sign-in'
 };
 
 const handleSubmit = async data => {
@@ -39,7 +39,7 @@ const SignUpForm = () => {
                 onSubmit={handleSubmit}
             >
                 {({isValid, handleSubmit, dirty}) => (
-                    <Form className={style.formsSingUp}>
+                    <Form className={style.formsSignUp}>
                         <div className={style.inputWrap}>
                             <Field
                                 type="name"

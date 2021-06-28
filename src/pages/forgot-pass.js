@@ -9,8 +9,8 @@ const ForgotPass = () => (
         <ForgotPas/>
         <Link
             text="New here ?"
-            linkText="Sing up"
-            linkHrf="/sing-up"
+            linkText="Sign up"
+            linkHrf="/sign-up"
             className="links-log"
         />
     </Container>

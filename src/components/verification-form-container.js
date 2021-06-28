@@ -32,8 +32,6 @@ const verificationFormContainer = () => {
     };
 
     const handleSubmit = async data => {
-        console.log((data.file = file));
-        await console.log(data);
         await updateUser(data);
     };
 

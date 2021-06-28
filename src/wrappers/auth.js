@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from '../styles/modules/form-container.module.scss';
 
-const FormWrap = ({children}) => (
+const Auth = ({children}) => (
     <div className={styles.formContainer}>
         <div className={styles.blockLeft}>
             <div className={styles.content}>
@@ -22,4 +22,4 @@ const FormWrap = ({children}) => (
     </div>
 );
 
-export default FormWrap;
+export default Auth;

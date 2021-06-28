@@ -1,7 +1,7 @@
 import {Field, Form, Formik} from 'formik';
 import React from 'react';
 
-import signIn from '../services/sing-in';
+import signIn from '../services/sign-in';
 import style from '../styles/modules/forms.module.scss';
 import isValidEmail from '../verifiers/is-valid-email';
 import isValidPassword from '../verifiers/is-valid-password';
@@ -11,10 +11,10 @@ import Link from './link';
 import Title from './title';
 
 const captions = {
-    title: 'Sing In',
+    title: 'Sign In',
     text: 'Don’t have anu account yet?',
-    linkText: 'Sing Up',
-    href: '/sing-up'
+    linkText: 'Sign Up',
+    href: '/sign-up'
 };
 
 const handleSubmit = async data => {
