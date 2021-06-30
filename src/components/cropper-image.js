@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import Cropper from 'react-easy-crop';
 
 const CropperImage = ({image, crop, setCrop, zoom, setZoom, onCropComplete, aspect}) => (

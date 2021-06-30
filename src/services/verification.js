@@ -1,8 +1,9 @@
-import axios from 'axios';
+import {VERIFICATION_URL} from '../constant/common';
+import fetcher from '../helpers/fetcher';
 
 const updateUser = async data => {
     try {
-        const result = await axios.post('https://www.google.com/', data.file, {
+        const result = await fetcher.put(VERIFICATION_URL, data, {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }

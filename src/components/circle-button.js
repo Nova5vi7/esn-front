@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from '../styles/modules/circle-button.module.scss';
 
-const circleButton = ({children, handleClick}) => (
+const circleButton = ({children, handleClick, className}) => (
     <button
         onClick={handleClick}
         type="button"

@@ -61,9 +61,10 @@
 
   &__image {
     position: relative;
-    width: 300px;
-    height: 300px;
-
+    width: 223px;
+    height: 223px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   .buttonWrap{
@@ -71,8 +72,17 @@
   }
 }
 
-.btn_label_wrap {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.btn {
+  &_label_wrap {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &_right {
+    right: 0;
+  }
+
+  &_left {
+    left: 0;
+  }
 }

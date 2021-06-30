@@ -1,5 +1,6 @@
 import {Field, Form, Formik} from 'formik';
 import React from 'react';
+import Image from "next/image";
 
 import style from '../styles/modules/verification.module.scss';
 import isValidName from '../verifiers/is-valid-name';
@@ -21,7 +22,10 @@ const verificationForm = ({
                               setCrop,
                               zoom,
                               setZoom,
-                              onCropComplete
+                              onCropComplete,
+                              showCroppedImage,
+                              croppedImage
+
                           }) => (
     <div className={style.verificationForm}>
         <div className={style.verificationForm__formWrap}>
@@ -47,20 +51,28 @@ const verificationForm = ({
                                 inputRef={inputRef}
                             />
                             <div className={style.verificationForm__image}>
-                                {filePath && (<CropperImage
-                                    image={filePath}
-                                    crop={crop}
-                                    setCrop={setCrop}
-                                    zoom={zoom}
-                                    setZoom={setZoom}
-                                    onCropComplete={onCropComplete}
-                                    aspect={1}
-                                />)}
+                                {filePath ?
+                                    (<CropperImage
+                                        image={filePath}
+                                        crop={crop}
+                                        setCrop={setCrop}
+                                        zoom={zoom}
+                                        setZoom={setZoom}
+                                        onCropComplete={onCropComplete}
+                                        aspect={1}
+                                    />) : (<Image src={'/images/user-plug.png'} width={233} height={233}/>)}
+
                             </div>
 
-                            <div className={style.btn_label_wrap}>
+                            <div className={`${style.btn_label_wrap} ${style.btn_right}`}>
                                 <CircleButton handleClick={handleInputClick}>
                                     <i className="icon-pencil"></i>
+                                </CircleButton>
+                            </div>
+
+                            <div className={`${style.btn_label_wrap} ${style.btn_left}`}>
+                                <CircleButton handleClick={showCroppedImage}>
+                                    <i className="icon-checkmark"></i>
                                 </CircleButton>
                             </div>
                         </div>

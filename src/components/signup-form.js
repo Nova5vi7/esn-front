@@ -1,5 +1,6 @@
 import {Field, Form, Formik} from 'formik';
 import React from 'react';
+import Router, {useRouter} from 'next/router';
 
 import signUp from '../services/sign-up';
 import style from '../styles/modules/forms.module.scss';
@@ -18,13 +19,19 @@ const captions = {
     href: '/sign-in'
 };
 
-const handleSubmit = async data => {
-    console.log(data);
-    await signUp(data);
-};
-
 const SignUpForm = () => {
     const {title, text, linkText, href} = captions;
+
+    const router = useRouter()
+
+    const handleSubmit = async data => {
+        try {
+            await signUp(data);
+            router.push('/verification')
+        } catch (err) {
+            console.log(err)
+        }
+    };
 
     return (
         <div className={style.form_container}>
