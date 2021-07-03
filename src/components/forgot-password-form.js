@@ -5,12 +5,10 @@ import styles from '../styles/modules/forms.module.scss';
 import Button from './button';
 import Input from './input';
 
-const LogInForm = ({onSubmit}) => (
+const LogInForm = ({handleSubmit, initialValues}) => (
     <div className={styles.formsLogIn}>
         <Formik
-            initialValues={{
-                email: ''
-            }}
+            initialValues={initialValues}
             onSubmit={onSubmit}
         >
             {({values, handleChange, handleBlur, isValid, handleSubmit, dirty}) => (

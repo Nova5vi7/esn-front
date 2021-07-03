@@ -1,11 +1,11 @@
 import React from 'react';
 
-import SignUpForm from '../components/signup-form';
+import SignUpFormContainer from '../components/signup-form-container';
 import Auth from '../wrappers/auth';
 
 const SignUp = () => (
     <Auth>
-        <SignUpForm/>
+        <SignUpFormContainer/>
     </Auth>
 );
 

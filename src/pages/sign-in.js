@@ -1,11 +1,11 @@
 import React from 'react';
 
-import LogInForm from '../components/login-form';
+import SignInFormContainer from '../components/signin-form-container';
 import Auth from '../wrappers/auth';
 
 const SignIn = () => (
     <Auth>
-        <LogInForm/>
+        <SignInFormContainer/>
     </Auth>
 );
 

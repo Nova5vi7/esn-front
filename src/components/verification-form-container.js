@@ -5,12 +5,20 @@ import VerificationForm from "./verification-form";
 
 const verificationFormContainer = () => {
     const [filePath, setFilePath] = useState(null);
+    const [stateCropp, setStateCropp] = useState(false);
     const [file, setFile] = useState(null);
     const [crop, setCrop] = useState({x: 0, y: 0});
     const [zoom, setZoom] = useState(1);
+    const [croppedImagePath, setCroppedImagePath] = useState(null)
     const [croppedArea, setCroppedArea] = useState(null)
     const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
-    const [blobData, setCroppedImage] = useState(null)
+    const [blobData, setBlobData] = useState(null)
+
+    const initialValues = {
+        firstName: '',
+        lastName: '',
+        phone: ''
+    }
 
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels)
@@ -25,12 +33,20 @@ const verificationFormContainer = () => {
         reader.readAsDataURL(image);
         reader.addEventListener('load', () => {
             reader.result && setFilePath(reader.result)
+            setStateCropp(true)
         })
     };
 
     const handleInputClick = () => {
         inputRef.current.click();
+        // setCroppedImagePath(null)
     };
+
+    const cancelCropper = () => {
+        setFilePath(null)
+        inputRef.current.value = null
+        setStateCropp(false)
+    }
 
     const handleSubmit = async data => {
         const formData = new FormData();
@@ -51,7 +67,7 @@ const verificationFormContainer = () => {
             image.setAttribute('crossOrigin', 'anonymous')
             image.src = url
         })
-
+    let b64 = null
     const getCroppedImg = async (imageSrc, pixelCrop) => {
         const image = await createImage(imageSrc)
         const canvas = document.createElement('canvas')
@@ -82,19 +98,10 @@ const verificationFormContainer = () => {
             Math.round(0 - safeArea / 2 + image.height * 0.5 - pixelCrop.y)
         )
 
-        // As Base64 string
-        const b64 = canvas.toDataURL('image/jpeg');
-
+        b64 = canvas.toDataURL('image/jpeg');
 
         const res = await fetch(b64)
         return res.blob()
-
-        // As a blob
-        // return new Promise(resolve => {
-        //     canvas.toBlob(file => {
-        //         resolve(URL.createObjectURL(file))
-        //     }, 'image/jpeg')
-        // })
     }
 
     const showCroppedImage = useCallback(async () => {
@@ -104,7 +111,9 @@ const verificationFormContainer = () => {
                 croppedAreaPixels,
             )
             const urlImage = URL.createObjectURL(img);
-            setCroppedImage(img)
+            setBlobData(img)
+            setCroppedImagePath(b64)
+            setStateCropp(null)
         } catch (e) {
             console.error(e)
         }
@@ -114,15 +123,19 @@ const verificationFormContainer = () => {
         <VerificationForm
             handleSubmit={handleSubmit}
             filePath={filePath}
+            stateCropp={stateCropp}
             handleChange={handleChange}
             inputRef={inputRef}
             handleInputClick={handleInputClick}
+            cancelCropper={cancelCropper}
             crop={crop}
             setCrop={setCrop}
             zoom={zoom}
             setZoom={setZoom}
             onCropComplete={onCropComplete}
             showCroppedImage={showCroppedImage}
+            croppedImagePath={croppedImagePath}
+            initialValues={initialValues}
         />
     );
 };

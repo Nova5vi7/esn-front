@@ -15,26 +15,26 @@ import CropperImage from "./cropper-image";
 const verificationForm = ({
                               handleSubmit,
                               filePath,
+                              stateCropp,
                               handleChange,
                               inputRef,
                               handleInputClick,
+                              cancelCropper,
                               crop,
                               setCrop,
                               zoom,
                               setZoom,
                               onCropComplete,
                               showCroppedImage,
-                              croppedImage
+                              croppedImage,
+                              croppedImagePath,
+                              initialValues
 
                           }) => (
     <div className={style.verificationForm}>
         <div className={style.verificationForm__formWrap}>
             <Formik
-                initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    phone: ''
-                }}
+                initialValues={initialValues}
                 onSubmit={handleSubmit}
             >
                 {({isValid, handleSubmit, dirty}) => (
@@ -51,7 +51,7 @@ const verificationForm = ({
                                 inputRef={inputRef}
                             />
                             <div className={style.verificationForm__image}>
-                                {filePath ?
+                                {stateCropp ?
                                     (<CropperImage
                                         image={filePath}
                                         crop={crop}
@@ -60,21 +60,28 @@ const verificationForm = ({
                                         setZoom={setZoom}
                                         onCropComplete={onCropComplete}
                                         aspect={1}
-                                    />) : (<Image src={'/images/user-plug.png'} width={233} height={233}/>)}
+                                    />) : (<Image src={croppedImagePath ? croppedImagePath : '/images/user-plug.png'} width={233} height={233}/>)}
+                                {/*{croppedImagePath && <Image src={croppedImagePath} width={233} height={233}/>}*/}
 
                             </div>
-
                             <div className={`${style.btn_label_wrap} ${style.btn_right}`}>
-                                <CircleButton handleClick={handleInputClick}>
-                                    <i className="icon-pencil"></i>
-                                </CircleButton>
+                                {stateCropp ? (
+                                    <CircleButton handleClick={showCroppedImage}>
+                                        <i className="icon-checkmark"></i>
+                                    </CircleButton>
+                                ) : (
+                                    <CircleButton handleClick={handleInputClick}>
+                                        <i className="icon-pencil"></i>
+                                    </CircleButton>
+                                )}
                             </div>
 
                             <div className={`${style.btn_label_wrap} ${style.btn_left}`}>
-                                <CircleButton handleClick={showCroppedImage}>
-                                    <i className="icon-checkmark"></i>
-                                </CircleButton>
+                                {stateCropp && <CircleButton handleClick={cancelCropper}>
+                                    <i className="icon-cross"></i>
+                                </CircleButton>}
                             </div>
+
                         </div>
 
                         <div className={style.verificationForm__inputsWrap}>

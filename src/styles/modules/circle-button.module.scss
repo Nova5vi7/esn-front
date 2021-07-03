@@ -4,8 +4,8 @@
 
 .button {
   &_label_file {
-    width: 65px;
-    height: 65px;
+    width: 49px;
+    height: 49px;
     background: var(--accent);
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
@@ -17,7 +17,7 @@
     color: #fff;
 
     i {
-      font-size: 25px;
+      font-size: 15px;
     }
   }
 }

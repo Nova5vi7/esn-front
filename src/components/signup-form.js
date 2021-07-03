@@ -1,12 +1,7 @@
 import {Field, Form, Formik} from 'formik';
 import React from 'react';
-import Router, {useRouter} from 'next/router';
 
-import signUp from '../services/sign-up';
 import style from '../styles/modules/forms.module.scss';
-import isValidEmail from '../verifiers/is-valid-email';
-import isValidName from '../verifiers/is-valid-name';
-import isValidPassword from '../verifiers/is-valid-password';
 import Button from './button';
 import Input from './input';
 import Link from './link';
@@ -19,30 +14,15 @@ const captions = {
     href: '/sign-in'
 };
 
-const SignUpForm = () => {
+const SignUpForm = ({captions, handleSubmit, isValidEmail, isValidName, isValidPassword, initialValues}) => {
     const {title, text, linkText, href} = captions;
-
-    const router = useRouter()
-
-    const handleSubmit = async data => {
-        try {
-            await signUp(data);
-            router.push('/verification')
-        } catch (err) {
-            console.log(err)
-        }
-    };
 
     return (
         <div className={style.form_container}>
             <Title>{title}</Title>
 
             <Formik
-                initialValues={{
-                    name: '',
-                    email: '',
-                    password: ''
-                }}
+                initialValues={initialValues}
                 onSubmit={handleSubmit}
             >
                 {({isValid, handleSubmit, dirty}) => (
