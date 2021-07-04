@@ -3,15 +3,15 @@ import React from 'react';
 
 import ForgotPass from "./forgot-password-form"
 
-const initialValues = {
-    email: '',
-}
-
-const handleSubmit = async data => {
-    console.log(data)
-};
-
 const LogInFormContainer = () => {
+    const initialValues = {
+        email: '',
+    }
+
+    const handleSubmit = async data => {
+        console.log(data)
+    };
+
     return (
         <ForgotPass handleSubmit={handleSubmit} initialValues={initialValues}/>
     )

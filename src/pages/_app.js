@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 
 import {useStore} from '../store';
 
-export default function MyApp({Component, pageProps}) {
+const App = ({Component, pageProps}) => {
     const store = useStore(pageProps.initialReduxState);
 
     return (
@@ -15,3 +15,5 @@ export default function MyApp({Component, pageProps}) {
         </Provider>
     );
 }
+
+export default App;

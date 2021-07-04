@@ -2,6 +2,7 @@ import React, {useCallback, useState} from 'react';
 
 import updateUser from '../services/verification';
 import VerificationForm from "./verification-form";
+import getCroppedImg from '../helpers/get-cropped-img';
 
 const verificationFormContainer = () => {
     const [filePath, setFilePath] = useState(null);
@@ -19,6 +20,17 @@ const verificationFormContainer = () => {
         lastName: '',
         phone: ''
     }
+
+    const captions = {
+        placeholderImage: "IFormik called `handleBlur`, but you forgot to pass an `id` or `name` attriage",
+        nameImage: "image",
+        typeName: "name",
+        typeTel: "tel",
+        typeFile: "file",
+        placeholderPhone: "Phone",
+        placeholdeFirstName: "First name",
+        placeholdeLastName: "Last name",
+    };
 
     const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
         setCroppedAreaPixels(croppedAreaPixels)
@@ -39,7 +51,6 @@ const verificationFormContainer = () => {
 
     const handleInputClick = () => {
         inputRef.current.click();
-        // setCroppedImagePath(null)
     };
 
     const cancelCropper = () => {
@@ -59,54 +70,9 @@ const verificationFormContainer = () => {
         await updateUser(formData);
     };
 
-    const createImage = url =>
-        new Promise((resolve, reject) => {
-            const image = new Image()
-            image.addEventListener('load', () => resolve(image))
-            image.addEventListener('error', error => reject(error))
-            image.setAttribute('crossOrigin', 'anonymous')
-            image.src = url
-        })
-    let b64 = null
-    const getCroppedImg = async (imageSrc, pixelCrop) => {
-        const image = await createImage(imageSrc)
-        const canvas = document.createElement('canvas')
-        const ctx = canvas.getContext('2d')
-
-        const maxSize = Math.max(image.width, image.height)
-        const safeArea = 2 * ((maxSize / 2) * Math.sqrt(2))
-
-        canvas.width = safeArea
-        canvas.height = safeArea
-
-        ctx.translate(safeArea / 2, safeArea / 2)
-        ctx.translate(-safeArea / 2, -safeArea / 2)
-
-        ctx.drawImage(
-            image,
-            safeArea / 2 - image.width * 0.5,
-            safeArea / 2 - image.height * 0.5
-        )
-        const data = ctx.getImageData(0, 0, safeArea, safeArea)
-
-        canvas.width = pixelCrop.width
-        canvas.height = pixelCrop.height
-
-        ctx.putImageData(
-            data,
-            Math.round(0 - safeArea / 2 + image.width * 0.5 - pixelCrop.x),
-            Math.round(0 - safeArea / 2 + image.height * 0.5 - pixelCrop.y)
-        )
-
-        b64 = canvas.toDataURL('image/jpeg');
-
-        const res = await fetch(b64)
-        return res.blob()
-    }
-
     const showCroppedImage = useCallback(async () => {
         try {
-            const img = await getCroppedImg(
+            const {img, b64} = await getCroppedImg(
                 filePath,
                 croppedAreaPixels,
             )
@@ -136,6 +102,7 @@ const verificationFormContainer = () => {
             showCroppedImage={showCroppedImage}
             croppedImagePath={croppedImagePath}
             initialValues={initialValues}
+            captions={captions}
         />
     );
 };

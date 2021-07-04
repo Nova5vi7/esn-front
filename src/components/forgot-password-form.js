@@ -24,7 +24,7 @@ const LogInForm = ({handleSubmit, initialValues}) => (
                     />
 
                     <Button
-                        className={styles.btn_sign_in}
+                        className={styles.btn}
                         handleSubmit={handleSubmit}
                         valid={isValid}
                         dirty={dirty}

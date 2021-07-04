@@ -28,104 +28,110 @@ const verificationForm = ({
                               showCroppedImage,
                               croppedImage,
                               croppedImagePath,
-                              initialValues
+                              initialValues,
+                              captions
 
-                          }) => (
-    <div className={style.verificationForm}>
-        <div className={style.verificationForm__formWrap}>
-            <Formik
-                initialValues={initialValues}
-                onSubmit={handleSubmit}
-            >
-                {({isValid, handleSubmit, dirty}) => (
-                    <Form className={style.verificationForm__form}>
-                        <div className={style.verificationForm__userImageWrap}>
-                            <Field
-                                type="file"
-                                placeholder="IFormik called `handleBlur`, but you forgot to pass an `id` or `name` attriage"
-                                name="image"
-                                id="photo"
-                                component={InputFile}
-                                onChange={handleChange}
-                                accept='image/*'
-                                inputRef={inputRef}
-                            />
-                            <div className={style.verificationForm__image}>
-                                {stateCropp ?
-                                    (<CropperImage
-                                        image={filePath}
-                                        crop={crop}
-                                        setCrop={setCrop}
-                                        zoom={zoom}
-                                        setZoom={setZoom}
-                                        onCropComplete={onCropComplete}
-                                        aspect={1}
-                                    />) : (<Image src={croppedImagePath ? croppedImagePath : '/images/user-plug.png'} width={233} height={233}/>)}
-                                {/*{croppedImagePath && <Image src={croppedImagePath} width={233} height={233}/>}*/}
+                          }) => {
 
-                            </div>
-                            <div className={`${style.btn_label_wrap} ${style.btn_right}`}>
-                                {stateCropp ? (
-                                    <CircleButton handleClick={showCroppedImage}>
-                                        <i className="icon-checkmark"></i>
-                                    </CircleButton>
-                                ) : (
-                                    <CircleButton handleClick={handleInputClick}>
-                                        <i className="icon-pencil"></i>
-                                    </CircleButton>
-                                )}
-                            </div>
+    const {placeholderImage, nameImage, name,  typeName, typeFile, typeTel, placeholderPhone, placeholdeFirstName, placeholdeLastName} = captions;
 
-                            <div className={`${style.btn_label_wrap} ${style.btn_left}`}>
-                                {stateCropp && <CircleButton handleClick={cancelCropper}>
-                                    <i className="icon-cross"></i>
-                                </CircleButton>}
-                            </div>
-
-                        </div>
-
-                        <div className={style.verificationForm__inputsWrap}>
-                            <div className={style.verificationForm__inputWrap}>
+    return (
+        <div className={style.verificationForm}>
+            <div className={style.verificationForm__formWrap}>
+                <Formik
+                    initialValues={initialValues}
+                    onSubmit={handleSubmit}
+                >
+                    {({isValid, handleSubmit, dirty}) => (
+                        <Form className={style.verificationForm__form}>
+                            <div className={style.verificationForm__userImageWrap}>
                                 <Field
-                                    type="name"
-                                    placeholder="First name"
-                                    name="firstName"
-                                    validate={isValidName}
-                                    component={Input}
+                                    type={typeFile}
+                                    placeholder={placeholderImage}
+                                    name={nameImage}
+                                    id="photo"
+                                    component={InputFile}
+                                    onChange={handleChange}
+                                    accept='image/*'
+                                    inputRef={inputRef}
                                 />
+                                <div className={style.verificationForm__image}>
+                                    {stateCropp ?
+                                        (<CropperImage
+                                            image={filePath}
+                                            crop={crop}
+                                            setCrop={setCrop}
+                                            zoom={zoom}
+                                            setZoom={setZoom}
+                                            onCropComplete={onCropComplete}
+                                            aspect={1}
+                                        />) : (
+                                            <Image src={croppedImagePath ? croppedImagePath : '/images/user-plug.png'}
+                                                   width={233} height={233}/>)}
+                                </div>
+                                <div className={`${style.btn_label_wrap} ${style.btn_right}`}>
+                                    {stateCropp ? (
+                                        <CircleButton onClick={showCroppedImage}>
+                                            <i className="icon-checkmark"></i>
+                                        </CircleButton>
+                                    ) : (
+                                        <CircleButton onClick={handleInputClick}>
+                                            <i className="icon-pencil"></i>
+                                        </CircleButton>
+                                    )}
+                                </div>
+
+                                <div className={`${style.btn_label_wrap} ${style.btn_left}`}>
+                                    {stateCropp && <CircleButton onClick={cancelCropper}>
+                                        <i className="icon-cross"></i>
+                                    </CircleButton>}
+                                </div>
+
                             </div>
 
-                            <div className={style.verificationForm__inputWrap}>
-                                <Field
-                                    type="name"
-                                    placeholder="Last name"
-                                    name="lastName"
-                                    validate={isValidName}
-                                    component={Input}
-                                />
+                            <div className={style.verificationForm__inputsWrap}>
+                                <div className={style.verificationForm__inputWrap}>
+                                    <Field
+                                        type={typeName}
+                                        placeholder={placeholdeFirstName}
+                                        name="firstName"
+                                        validate={isValidName}
+                                        component={Input}
+                                    />
+                                </div>
+
+                                <div className={style.verificationForm__inputWrap}>
+                                    <Field
+                                        type={typeName}
+                                        placeholder={placeholdeLastName}
+                                        name="lastName"
+                                        validate={isValidName}
+                                        component={Input}
+                                    />
+                                </div>
+
+                                <div className={style.verificationForm__inputWrap}>
+                                    <Field
+                                        type={typeTel}
+                                        placeholder={placeholderPhone}
+                                        component={InputPhone}
+                                        name="phone"
+                                        validate={isValidPhone}
+                                    />
+                                </div>
                             </div>
 
-                            <div className={style.verificationForm__inputWrap}>
-                                <Field
-                                    type="tel"
-                                    placeholder="Phone"
-                                    component={InputPhone}
-                                    name="phone"
-                                    validate={isValidPhone}
-                                />
+                            <div className={style.buttonWrap}>
+                                <Button onClick={handleSubmit} valid={isValid} dirty={dirty}>
+                                    Continue
+                                </Button>
                             </div>
-                        </div>
-
-                        <div className={style.buttonWrap}>
-                            <Button onClick={handleSubmit} valid={isValid} dirty={dirty}>
-                                Continue
-                            </Button>
-                        </div>
-                    </Form>
-                )}
-            </Formik>
+                        </Form>
+                    )}
+                </Formik>
+            </div>
         </div>
-    </div>
-);
+    )
+}
 
 export default verificationForm;
