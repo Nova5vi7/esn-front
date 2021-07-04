@@ -1,88 +1,76 @@
-import { Field, Form, Formik } from 'formik';
+import {Field, Form, Formik} from 'formik';
 import React from 'react';
 
-import signUp from '../services/sign-up';
-import styles from '../styles/modules/forms.module.scss';
-import isValidEmail from '../verifiers/is-valid-email';
-import isValidName from '../verifiers/is-valid-name';
-import isValidPassword from '../verifiers/is-valid-password';
+import style from '../styles/modules/forms.module.scss';
 import Button from './button';
 import Input from './input';
 import Link from './link';
 import Title from './title';
 
 const captions = {
-  title: 'Sing Up',
-  text: 'Already have an account?',
-  linkText: 'Sing In',
-  href: '/sing-in'
+    title: 'Sign Up',
+    text: 'Already have an account?',
+    linkText: 'Sign In',
+    href: '/sign-in'
 };
 
-const handleSubmit = async data => {
-  await signUp(data);
-};
+const SignUpForm = ({captions, handleSubmit, isValidEmail, isValidName, isValidPassword, initialValues}) => {
+    const {title, text, linkText, href} = captions;
 
-const SignUpForm = () => {
-  const { title, text, linkText, href } = captions;
+    return (
+        <div className={style.form_container}>
+            <Title>{title}</Title>
 
-  return (
-    <div className={styles.form_container}>
-      <Title>{title}</Title>
+            <Formik
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
+            >
+                {({isValid, handleSubmit, dirty}) => (
+                    <Form className={style.formsSignUp}>
+                        <div className={style.inputWrap}>
+                            <Field
+                                type="name"
+                                placeholder="Name"
+                                name="name"
+                                validate={isValidName}
+                                component={Input}
+                            />
+                        </div>
 
-      <Formik
-        initialValues={{
-          name: '',
-          email: '',
-          password: ''
-        }}
-        onSubmit={handleSubmit}
-      >
-        {({ values, isValid, handleSubmit, dirty }) => (
-          <Form className={styles.formsSingUp}>
-            <div className={styles.inputWrap}>
-              <Field
-                type="name"
-                placeholder="Name"
-                name="name"
-                validate={isValidName}
-                component={Input}
-              />
+                        <div className={style.inputWrap}>
+                            <Field
+                                type="email"
+                                placeholder="Email"
+                                name="email"
+                                validate={isValidEmail}
+                                component={Input}
+                            />
+                        </div>
+
+                        <div className={style.inputWrap}>
+                            <Field
+                                type="password"
+                                placeholder="Password"
+                                name="password"
+                                validate={isValidPassword}
+                                component={Input}
+                            />
+                        </div>
+                        <div className={style.buttonWrap}>
+                            <Button onClick={handleSubmit} valid={isValid} dirty={dirty}>
+                                Sign up
+                            </Button>
+                        </div>
+                    </Form>
+                )}
+            </Formik>
+
+            <div className={style.link_wrap}>
+                <p>{text}</p>
+                <Link href={href}>{linkText}</Link>
             </div>
-
-            <div className={styles.inputWrap}>
-              <Field
-                type="email"
-                placeholder="Email"
-                name="email"
-                validate={isValidEmail}
-                component={Input}
-              />
-            </div>
-
-            <div className={styles.inputWrap}>
-              <Field
-                type="password"
-                placeholder="Password"
-                name="password"
-                value={values.password}
-                validate={isValidPassword}
-                component={Input}
-              />
-            </div>
-
-            <Button handleSubmit={handleSubmit} valid={isValid} dirty={dirty}>
-              Sign up
-            </Button>
-          </Form>
-        )}
-      </Formik>
-
-      <div className={styles.link_wrap}>
-        <p>{text}</p>
-        <Link href={href}>{linkText}</Link>
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default SignUpForm;

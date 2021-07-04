@@ -1,0 +1,92 @@
+@import "../mixin";
+@import "../fonts";
+
+
+.verificationForm {
+  padding: 90px 0;
+  max-width: 630px;
+  width: 100%;
+  margin: 0 auto;
+
+  &__formWrap {
+    padding: 88px 110px 42px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.22));
+  }
+
+  &__inputsWrap,
+  &__inputWrap {
+    width: 100%;
+  }
+
+  &__inputsWrap {
+    margin-bottom: 80px;
+  }
+
+  &__inputWrap {
+    position: relative;
+    margin-bottom: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__userImageWrap {
+    position: relative;
+    margin-bottom: 49px;
+
+    input {
+      display: none;
+    }
+
+    label {
+      position: absolute;
+      width: 65px;
+      height: 65px;
+      background: var(--accent);
+      border: 2px solid #FFFFFF;
+      box-sizing: border-box;
+      border-radius: 50%;
+      @include displayFlex();
+      align-items: center;
+      justify-content: center;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+      color: #000;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 223px;
+    height: 223px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .buttonWrap{
+    width: 100%;
+  }
+}
+
+.btn {
+  &_label_wrap {
+    position: absolute;
+    bottom: 0;
+  }
+
+  &_right {
+    right: 15px;
+  }
+
+  &_left {
+    left: 15px;
+
+    button {
+      background-color: var(--gray);
+    }
+  }
+}
