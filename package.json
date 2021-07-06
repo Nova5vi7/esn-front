@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "formik": "^2.2.8",
     "next": "^10.0.0",
     "next-redux-wrapper": "^6.0.2",

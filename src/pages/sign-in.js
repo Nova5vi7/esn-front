@@ -1,12 +1,12 @@
 import React from 'react';
 
-import SignInFormContainer from '../components/signin-form-container';
-import Auth from '../wrappers/auth';
+import SignInPage from '../modules/sign-in';
+import Auth from '../modules/wrappers/auth';
 
 const SignIn = () => (
-    <Auth>
-        <SignInFormContainer/>
-    </Auth>
+  <Auth>
+    <SignInPage />
+  </Auth>
 );
 
 export default SignIn;
