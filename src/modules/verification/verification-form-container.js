@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 
 import getCroppedImg from './helpers/get-cropped-img';
-import updateUser from '../../services/user/update-user';
+import updateUser from 'services/user/update-user';
 import VerificationForm from './verification-form';
 
 const initialValues = {

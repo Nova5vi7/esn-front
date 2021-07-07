@@ -1,4 +1,4 @@
-import fetcher from '../../utils/fetcher';
+import fetcher from 'utils/fetcher';
 
 const updateUser = async data => {
   try {

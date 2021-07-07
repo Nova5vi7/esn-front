@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import SignInFormComponent from './sign-in-form-component';
-import signIn from '../../services/auth/sign-in';
+import signIn from 'services/auth/sign-in';
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidPassword from '../verification/verifiers/is-valid-password';
 

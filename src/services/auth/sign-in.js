@@ -1,4 +1,4 @@
-import fetcher from '../../utils/fetcher';
+import fetcher from 'utils/fetcher';
 
 const signIn = async data => {
   const result = await fetcher.post('/auth/sign-in', data);
