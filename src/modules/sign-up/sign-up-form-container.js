@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
-import signUp from '../../services/sign-up';
-import isValidEmail from '../../verifiers/is-valid-email';
-import isValidName from '../../verifiers/is-valid-name';
-import isValidPassword from '../../verifiers/is-valid-password';
+import signUp from '../../services/auth/sign-up';
+
+import setUser from 'store/user/actions/set-user';
 import SignUpFormComponent from './sign-up-form-component';
 
 const captions = {
@@ -22,12 +22,13 @@ const initialValues = {
 
 const SignUpFormContainer = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleSubmit = useCallback(
     async data => {
-      const response = await signUp(data);
-      // TODO: Dispatch action
-      console.log(response);
+      const { accessToken, user } = await signUp(data);
+      window.localStorage.setItem('token', accessToken);
+      dispatch(setUser(user));
       await router.push('/verification');
     },
     [router]
@@ -37,9 +38,6 @@ const SignUpFormContainer = () => {
     <SignUpFormComponent
       captions={captions}
       handleSubmit={handleSubmit}
-      isValidEmail={isValidEmail}
-      isValidName={isValidName}
-      isValidPassword={isValidPassword}
       initialValues={initialValues}
     />
   );

@@ -1,19 +1,19 @@
-import {VARIFIERS_PHONE} from '../constant/varifiers';
+import { PHONE_REGEX } from '../constants/varifiers';
 
 const isValidPhone = phoneValue => {
-    return Boolean(!VARIFIERS_PHONE.test(phoneValue));
+  return Boolean(!PHONE_REGEX.test(phoneValue));
 };
 
 const validatePhone = value => {
-    let error;
+  let error;
 
-    if (!value) {
-        error = 'Required';
-    } else if (isValidPhone(value)) {
-        error = 'Invalid phone';
-    }
+  if (!value) {
+    error = 'Required';
+  } else if (isValidPhone(value)) {
+    error = 'Invalid phone';
+  }
 
-    return error;
+  return error;
 };
 
 export default validatePhone;

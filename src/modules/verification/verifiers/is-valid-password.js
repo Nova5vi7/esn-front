@@ -1,7 +1,7 @@
-import {VARIFIERS_PASSWORD} from '../constant/varifiers';
+import {PASSWORD_REGEX} from '../constants/varifiers';
 
 const isValidPassword = passwordValue => {
-    return Boolean(!VARIFIERS_PASSWORD.test(passwordValue));
+    return Boolean(!PASSWORD_REGEX.test(passwordValue));
 };
 
 const validatePassword = value => {

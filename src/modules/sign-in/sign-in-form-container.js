@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import SignInFormComponent from './sign-in-form-component';
-import signIn from '../../services/sign-in';
-import isValidEmail from '../../verifiers/is-valid-email';
-import isValidPassword from '../../verifiers/is-valid-password';
+import signIn from '../../services/auth/sign-in';
+import isValidEmail from '../verification/verifiers/is-valid-email';
+import isValidPassword from '../verification/verifiers/is-valid-password';
 
 const captions = {
   title: 'Sign In',

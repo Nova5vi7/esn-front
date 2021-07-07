@@ -1,9 +1,8 @@
-import { VERIFICATION_URL } from '../constant/common';
-import fetcher from '../helpers/fetcher';
+import fetcher from '../../utils/fetcher';
 
 const updateUser = async data => {
   try {
-    const result = await fetcher.put(VERIFICATION_URL, data, {
+    const result = await fetcher.put('/user/', data, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

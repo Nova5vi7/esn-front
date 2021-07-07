@@ -3,8 +3,8 @@ import React from 'react';
 import Image from 'next/image';
 
 import style from '../../styles/modules/verification.module.scss';
-import isValidName from '../../verifiers/is-valid-name';
-import isValidPhone from '../../verifiers/is-valid-phone';
+import isValidName from './verifiers/is-valid-name';
+import isValidPhone from './verifiers/is-valid-phone';
 import Button from '../components/button/button';
 import CircleButton from '../components/button/circle-button';
 import Input from '../components/input/input';
@@ -26,7 +26,6 @@ const verificationForm = ({
   setZoom,
   onCropComplete,
   showCroppedImage,
-  croppedImage,
   croppedImagePath,
   initialValues,
   captions

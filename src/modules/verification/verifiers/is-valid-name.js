@@ -1,7 +1,7 @@
-import {VARIFIERS_NAME} from '../constant/varifiers';
+import {NAME_REGEX} from '../constants/varifiers';
 
 const isValidName = nameValue => {
-    return Boolean(!VARIFIERS_NAME.test(nameValue));
+    return Boolean(!NAME_REGEX.test(nameValue));
 };
 
 const validateName = value => {

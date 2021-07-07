@@ -7,6 +7,9 @@ const User = (state = initialState, action) => {
     case actionTypes.SET_USER:
       return { ...state, ...action.payload.user };
 
+    case actionTypes.CLEAR_USER:
+      return { ...initialState };
+
     default:
       return state;
   }

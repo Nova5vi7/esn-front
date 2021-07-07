@@ -1,7 +1,7 @@
-import {VARIFIERS_EMAIL} from '../constant/varifiers';
+import {EMAIL_REGEX} from '../constants/varifiers';
 
 const isValidEmail = emailValue => {
-    return Boolean(!VARIFIERS_EMAIL.test(emailValue));
+    return Boolean(!EMAIL_REGEX.test(emailValue));
 };
 
 const validateEmail = value => {

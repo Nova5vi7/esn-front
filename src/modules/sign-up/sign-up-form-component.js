@@ -6,22 +6,11 @@ import Button from '../components/button/button';
 import Input from '../components/input/input';
 import Link from '../components/text/link';
 import Title from '../components/text/title';
+import isValidEmail from '../verification/verifiers/is-valid-email';
+import isValidName from '../verification/verifiers/is-valid-name';
+import isValidPassword from '../verification/verifiers/is-valid-password';
 
-const captions = {
-  title: 'Sign Up',
-  text: 'Already have an account?',
-  linkText: 'Sign In',
-  href: '/sign-in'
-};
-
-const SignUpFormComponent = ({
-  captions,
-  handleSubmit,
-  isValidEmail,
-  isValidName,
-  isValidPassword,
-  initialValues
-}) => {
+const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
   const { title, text, linkText, href } = captions;
 
   return (

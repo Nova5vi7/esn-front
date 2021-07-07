@@ -1,8 +1,14 @@
 import React, { useCallback, useState } from 'react';
 
-import getCroppedImg from '../../helpers/get-cropped-img';
-import updateUser from '../../services/update-user';
+import getCroppedImg from './helpers/get-cropped-img';
+import updateUser from '../../services/user/update-user';
 import VerificationForm from './verification-form';
+
+const initialValues = {
+  firstName: '',
+  lastName: '',
+  phone: ''
+};
 
 const captions = {
   placeholder: {
@@ -26,20 +32,14 @@ const verificationFormContainer = () => {
   const [croppedAreaPixels, setCroppedAreaPixels] = useState(null);
   const [blobData, setBlobData] = useState(null);
 
-  const initialValues = {
-    firstName: '',
-    lastName: '',
-    phone: ''
-  };
-
   const onCropComplete = useCallback((croppedArea, croppedAreaPixels) => {
     setCroppedAreaPixels(croppedAreaPixels);
   }, []);
 
-  const inputRef = React.useRef();
+  const inputReference = React.useRef();
 
-  const handleChange = event => {
-    const image = event.target.files[0];
+  const handleChange = ({ target }) => {
+    const image = target.files[0];
 
     const reader = new FileReader();
     reader.readAsDataURL(image);
@@ -50,12 +50,12 @@ const verificationFormContainer = () => {
   };
 
   const handleInputClick = () => {
-    inputRef.current.click();
+    inputReference.current.click();
   };
 
   const cancelCropper = () => {
     setFilePath(null);
-    inputRef.current.value = null;
+    inputReference.current.value = null;
     setCropState(false);
   };
 
@@ -63,6 +63,7 @@ const verificationFormContainer = () => {
     const formData = new FormData();
 
     Object.keys(data).forEach(key => {
+      // eslint-disable-next-line security/detect-object-injection
       formData.append(key, data[key]);
     });
     formData.append('image', blobData);
@@ -87,7 +88,7 @@ const verificationFormContainer = () => {
       filePath={filePath}
       stateCropp={cropState}
       handleChange={handleChange}
-      inputRef={inputRef}
+      inputRef={inputReference}
       handleInputClick={handleInputClick}
       cancelCropper={cancelCropper}
       crop={crop}
