@@ -25,7 +25,9 @@ const SignUpFormContainer = () => {
 
   const handleSubmit = useCallback(
     async data => {
-      await signUp(data);
+      const response = await signUp(data);
+      // TODO: Dispatch action
+      console.log(response);
       await router.push('/verification');
     },
     [router]

@@ -1,5 +1,3 @@
-const initialState = {
-  products: {}
-};
+const initialState = {};
 
 export default initialState;

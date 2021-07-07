@@ -3,7 +3,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import initialState from './initial-state';
-import createRootReducer from './reducers/';
+import createRootReducer from './reducer';
 
 let store;
 

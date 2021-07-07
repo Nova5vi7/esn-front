@@ -1,5 +1,5 @@
 import actionTypes from '../actions/action-types';
-import initialState from '../initial-state';
+import initialState from '../../initial-state';
 
 const products = (state = initialState, action) => {
   switch (action.type) {
