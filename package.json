@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "formik": "^2.2.8",
+    "humps": "^2.0.1",
     "next": "^10.0.0",
     "next-redux-wrapper": "^6.0.2",
     "react": "17.0.1",
