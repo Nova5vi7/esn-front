@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Header from '../header/header';
 import style from '../../styles/modules/page-wrap.module.scss';
+import Header from '../header/header';
 
 const mainWrap = ({ children }) => (
   <>

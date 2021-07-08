@@ -16,7 +16,7 @@ const InputPhone = ({
     phoneNumber => {
       setFieldValue(name, phoneNumber);
     },
-    [value, name]
+    [name, setFieldValue]
   );
 
   const hasError = errors[`${name}`] && touched[`${name}`];

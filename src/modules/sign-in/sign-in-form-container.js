@@ -1,10 +1,10 @@
-import React from 'react';
 import { useRouter } from 'next/router';
-
-import SignInFormComponent from './sign-in-form-component';
+import React from 'react';
 import signIn from 'services/auth/sign-in';
+
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidPassword from '../verification/verifiers/is-valid-password';
+import SignInFormComponent from './sign-in-form-component';
 
 const captions = {
   title: 'Sign In',
@@ -25,8 +25,8 @@ const SignInFormContainer = () => {
     try {
       await signIn(data);
       router.push('/verification');
-    } catch (err) {
-      console.log(err);
+    } catch (error) {
+      console.log(error);
     }
   };
 

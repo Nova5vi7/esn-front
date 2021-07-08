@@ -1,10 +1,9 @@
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-
 import signUp from 'services/auth/sign-up';
-
 import setUser from 'store/user/actions/set-user';
+
 import SignUpFormComponent from './sign-up-form-component';
 
 const captions = {
@@ -31,7 +30,7 @@ const SignUpFormContainer = () => {
       dispatch(setUser(user));
       await router.push('/verification');
     },
-    [router]
+    [router, dispatch]
   );
 
   return (

@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import React from 'react';
 import { MenuItem, MenuWrapper } from 'modules/components/menu';
 import Link from 'modules/components/text/link';
+import Head from 'next/head';
+import React from 'react';
 
 const pages = [
   {

@@ -1,7 +1,6 @@
-import React from 'react';
-
 import SignUpPage from 'modules/sign-up';
 import Auth from 'modules/wrappers/auth';
+import React from 'react';
 
 const SignUp = () => (
   <Auth>

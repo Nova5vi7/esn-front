@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
+import updateUser from 'services/user/update-user';
 
 import getCroppedImg from './helpers/get-cropped-img';
-import updateUser from 'services/user/update-user';
 import VerificationForm from './verification-form';
 
 const initialValues = {
@@ -62,10 +62,10 @@ const verificationFormContainer = () => {
   const handleSubmit = async data => {
     const formData = new FormData();
 
-    Object.keys(data).forEach(key => {
+    for (const key of Object.keys(data)) {
       // eslint-disable-next-line security/detect-object-injection
       formData.append(key, data[key]);
-    });
+    }
     formData.append('image', blobData);
 
     await updateUser(formData);
@@ -77,10 +77,10 @@ const verificationFormContainer = () => {
       setBlobData(img);
       setCroppedImagePath(b64);
       setCropState(null);
-    } catch (e) {
-      console.error(e);
+    } catch (error) {
+      console.error(error);
     }
-  }, [croppedAreaPixels]);
+  }, [croppedAreaPixels, filePath]);
 
   return (
     <VerificationForm

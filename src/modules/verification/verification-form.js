@@ -1,16 +1,16 @@
 import { Field, Form, Formik } from 'formik';
-import React from 'react';
 import Image from 'next/image';
+import React from 'react';
 
 import style from '../../styles/modules/verification.module.scss';
-import isValidName from './verifiers/is-valid-name';
-import isValidPhone from './verifiers/is-valid-phone';
 import Button from '../components/button/button';
 import CircleButton from '../components/button/circle-button';
+import CropperImage from '../components/image-cropper/cropper-image';
 import Input from '../components/input/input';
 import InputFile from '../components/input/input-file';
 import InputPhone from '../components/input/input-phone';
-import CropperImage from '../components/image-cropper/cropper-image';
+import isValidName from './verifiers/is-valid-name';
+import isValidPhone from './verifiers/is-valid-phone';
 
 const verificationForm = ({
   handleSubmit,
