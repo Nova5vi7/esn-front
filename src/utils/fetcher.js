@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { camelizeKeys, decamelizeKeys, decamelize } from 'humps';
+import { camelizeKeys, decamelize, decamelizeKeys } from 'humps';
 
 import { BASE_URL } from '../config';
 
