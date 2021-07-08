@@ -3,17 +3,16 @@ import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import initialState from './initial-state';
-import createRootReducer from './reducers/';
+import createRootReducer from './reducer';
 
 let store;
 
-function configureStore(initState = initialState) {
-  return createStore(
+const configureStore = (initState = initialState) =>
+  createStore(
     createRootReducer(),
     initState,
     composeWithDevTools(applyMiddleware())
   );
-}
 
 export const initializeStore = initialState => {
   let _store = store ?? configureStore(initialState);
@@ -32,6 +31,5 @@ export const initializeStore = initialState => {
   return _store;
 };
 
-export function useStore(initialState) {
-  return useMemo(() => initializeStore(initialState), [initialState]);
-}
+export const useStore = initialState =>
+  useMemo(() => initializeStore(initialState), [initialState]);

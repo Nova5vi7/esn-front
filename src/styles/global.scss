@@ -1,14 +1,16 @@
-@import "_mixin.scss";
-@import "_fonts";
+@import '_mixin.scss';
+@import '_fonts';
 
 * {
   outline: none;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
-html, body, #__next {
+html,
+body,
+#__next {
   height: 100%;
 }
 
@@ -59,4 +61,3 @@ form {
 .react-tel-input .country-list .country {
   color: var(--muted);
 }
-
