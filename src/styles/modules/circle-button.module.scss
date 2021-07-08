@@ -1,13 +1,12 @@
-@import "../mixin";
-@import "../fonts";
-
+@import '../mixin';
+@import '../fonts';
 
 .button {
   &_label_file {
     width: 49px;
     height: 49px;
     background: var(--accent);
-    border: 2px solid #FFFFFF;
+    border: 2px solid #ffffff;
     box-sizing: border-box;
     border-radius: 50%;
     @include displayFlex();
