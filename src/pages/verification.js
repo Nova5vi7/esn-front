@@ -1,5 +1,5 @@
 import VerificationFormContainer from 'modules/verification/verification-form-container';
-import Wrap from 'modules/wrappers/main';
+import Wrap from '@/modules/layouts/main';
 import React from 'react';
 
 const VerificationPage = () => (

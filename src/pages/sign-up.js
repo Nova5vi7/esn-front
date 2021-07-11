@@ -1,5 +1,5 @@
 import SignUpPage from 'modules/sign-up';
-import Auth from 'modules/wrappers/auth';
+import Auth from '@/modules/layouts/auth';
 import React from 'react';
 
 const SignUp = () => (

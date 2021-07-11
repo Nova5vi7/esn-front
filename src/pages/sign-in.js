@@ -1,5 +1,5 @@
 import SignInPage from 'modules/sign-in';
-import Auth from 'modules/wrappers/auth';
+import Auth from '@/modules/layouts/auth';
 import React from 'react';
 
 const SignIn = () => (
