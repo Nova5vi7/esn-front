@@ -1,9 +1,9 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 
 import style from '../../../styles/modules/button.module.scss';
 
-const Button = ({ children, onClick, disabled, type, TEST_PROPS }) => (
+const Button = ({ children, onClick, disabled, type }) => (
   <button
     className={style.button_submit}
     onClick={onClick}
@@ -15,7 +15,6 @@ const Button = ({ children, onClick, disabled, type, TEST_PROPS }) => (
 );
 
 Button.propTypes = {
-  TEST_PROPS: PropTypes.bool.isRequired,
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
