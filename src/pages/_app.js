@@ -4,9 +4,11 @@ import '../styles/_vars.css';
 
 import Head from 'next/head';
 import { Provider } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 
 import { useStore } from '../store';
 import GlobalStyles from '../style/global-styles';
+import Theme from '../style/theme';
 
 const App = ({ Component, pageProps }) => {
   const store = useStore(pageProps.initialReduxState);
@@ -17,9 +19,11 @@ const App = ({ Component, pageProps }) => {
         <title>Title here</title>
       </Head>
       <GlobalStyles />
-      <Provider store={store}>
-        <Component {...pageProps} />
-      </Provider>
+      <ThemeProvider theme={Theme}>
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
+      </ThemeProvider>
     </>
   );
 };
