@@ -1,6 +1,7 @@
 import SignInPage from 'modules/sign-in';
-import Auth from 'modules/wrappers/auth';
 import React from 'react';
+
+import Auth from '@/modules/layouts/auth';
 
 const SignIn = () => (
   <Auth>
