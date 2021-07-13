@@ -31,7 +31,7 @@ ButtonComponent.propTypes = {
 };
 
 ButtonComponent.defaultProps = {
-  btnType: 'secondary',
+  btnType: 'default',
   disabled: false,
   type: 'button'
 };

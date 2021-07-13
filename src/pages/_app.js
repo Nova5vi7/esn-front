@@ -1,4 +1,3 @@
-import '../styles/global.scss';
 import '../styles/libs.scss';
 import '../styles/_vars.css';
 
@@ -8,6 +7,7 @@ import { ThemeProvider } from 'styled-components';
 
 import { useStore } from '../store';
 import GlobalStyles from '../style/global-styles';
+import Fonts from '../style/fonts';
 import Theme from '../style/theme';
 
 const App = ({ Component, pageProps }) => {
@@ -18,8 +18,10 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>Title here</title>
       </Head>
-      <GlobalStyles />
+      <Fonts/>
       <ThemeProvider theme={Theme}>
+        <GlobalStyles />
+
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
