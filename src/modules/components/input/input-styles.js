@@ -10,7 +10,7 @@ const InputStyle = css`
   box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
   border-radius: 6px;
   color: ${({ theme }) => theme.colors.muted};
-  font-family: 'IBMPlexSans-Regular', sans-serif; 
+  font-family: 'IBMPlexSans-Regular', sans-serif;
   font-size: 16px;
   line-height: 1.25;
 
@@ -24,7 +24,7 @@ const InputStyle = css`
     line-height: 1.25;
     color: rgba(255, 255, 255, 0.6);
   }
-`
+`;
 
 export const Input = styled.input`
   ${InputStyle}
