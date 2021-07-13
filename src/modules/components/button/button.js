@@ -2,11 +2,11 @@ import React from 'react';
 
 import style from '../../../styles/modules/button.module.scss';
 
-const Button = ({ children, onClick, valid, dirty }) => (
+const Button = ({ children, onClick, valid, dirty, loading }) => (
   <button
     className={style.button_submit}
     onClick={onClick}
-    disabled={!valid && !dirty}
+    disabled={!valid && !dirty && loading}
     type="submit"
   >
     {children}

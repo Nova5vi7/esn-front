@@ -10,7 +10,7 @@ import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidName from '../verification/verifiers/is-valid-name';
 import isValidPassword from '../verification/verifiers/is-valid-password';
 
-const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
+const SignUpFormComponent = ({ captions, handleSubmit, initialValues, loading }) => {
   const { title, text, linkText, href } = captions;
 
   return (
@@ -50,8 +50,8 @@ const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
               />
             </div>
             <div className={style.buttonWrap}>
-              <Button onClick={handleSubmit} valid={isValid} dirty={dirty}>
-                Sign up
+              <Button onClick={handleSubmit} valid={isValid} dirty={dirty} loading={loading}>
+                {loading ? 'Sending...' : 'Sign up'}
               </Button>
             </div>
           </Form>
