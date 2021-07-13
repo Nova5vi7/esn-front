@@ -1,29 +1,39 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import style from '../../../styles/modules/button.module.scss';
+import { Button } from './button-styles';
 
-const Button = ({ children, onClick, disabled, type }) => (
-  <button
-    className={style.button_submit}
+const ButtonComponent = ({
+  children,
+  onClick,
+  btnType,
+  disabled,
+  type,
+  active
+}) => (
+  <Button
+    btnType={btnType}
     onClick={onClick}
     disabled={disabled}
     type={type}
+    active={active}
   >
     {children}
-  </button>
+  </Button>
 );
 
-Button.propTypes = {
+ButtonComponent.propTypes = {
   children: PropTypes.node.isRequired,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
+  btnType: PropTypes.string,
   type: PropTypes.oneOf(['button', 'submit'])
 };
 
-Button.defaultProps = {
+ButtonComponent.defaultProps = {
+  btnType: 'secondary',
   disabled: false,
   type: 'button'
 };
 
-export default Button;
+export default ButtonComponent;
