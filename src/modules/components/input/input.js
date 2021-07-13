@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Input } from './input-styles';
-import { Error } from '../error/error-styles';
+import { Input } from './input-style';
+import { Error } from '../error/error-style';
 
 const InputComponent = ({
   field,
