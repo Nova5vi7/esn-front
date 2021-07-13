@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     font-size: 1.5rem;
     line-height: 1;
-    font-family: 'IBMPlexSans-Regular', sans-serif;
+    font-family: 'IBMPlexSans-Regular', sans-serif; 
     position: relative;
     margin: 0;
     color:  ${({ theme }) => theme.colors.bright};
