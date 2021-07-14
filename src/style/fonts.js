@@ -2,14 +2,16 @@ import { createGlobalStyle } from 'styled-components';
 
 const LocalFonts = createGlobalStyle`
    @font-face {
-    font-family: ${props => props.fontName};
-    src: url('${props => props.url}');
-    src: url('${props => props.url}?#iefix') format('embedded-opentype'),
-    url('${props => props.url}${props =>
-  props.fontWeight}.woff') format('woff'),
-    url('${props => props.url}${props => props.fontWeight}.ttf') format('type');
-    font-weight: ${props => props.weight};
-    font-style: ${props => props.style && 'normal'};
+    font-family: ${properties => properties.fontName};
+    src: url('${properties => properties.url}');
+    src: url('${properties =>
+      properties.url}?#iefix') format('embedded-opentype'),
+    url('${properties => properties.url}${properties =>
+  properties.fontWeight}.woff') format('woff'),
+    url('${properties => properties.url}${properties =>
+  properties.fontWeight}.ttf') format('type');
+    font-weight: ${properties => properties.weight};
+    font-style: ${properties => properties.style && 'normal'};
     font-display: block;
   }
 `;
