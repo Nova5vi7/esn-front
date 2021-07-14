@@ -73,17 +73,19 @@ const ButtonStyle = css`
   height: 56px;
   border: none;
   padding: 0 20px;
-  box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08),
-    0px 4px 8px rgba(44, 39, 56, 0.08);
+  box-shadow: ${({ theme }) => theme.typo.boxShadow};
   border-radius: 6px;
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: ${({ theme }) => theme.typo.fonts.default};
   font-weight: ${({ theme }) => theme.typo.weights.medium};
-  font-size: 16px;
-  line-height: 1.25;
+  // font-size: 16px;
+  // line-height: 1.25;
+  font-size: ${({ theme: { ms } }) => ms(2)};
+  line-height: ${({ theme: { ms } }) => ms(2)};
   cursor: pointer;
   transition: all 0.3s ease;
   ${({ btnType }) => getBackground(btnType)};

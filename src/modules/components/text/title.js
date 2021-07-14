@@ -1,7 +1,7 @@
 import React from 'react';
 
-import style from '../../../styles/modules/title.module.scss';
+import {H1} from "./text-style";
 
-const Title = ({ children }) => <h1 className={style.title}>{children}</h1>;
+const Title = ({ children }) => <H1>{children}</H1>;
 
 export default Title;

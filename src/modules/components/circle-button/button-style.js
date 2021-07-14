@@ -1,15 +1,13 @@
-@import '../mixin';
-@import '../fonts';
+import styled, { css } from 'styled-components';
 
-.button {
-  &_label_file {
-    width: 49px;
+const ButtonStyle = css`
+  width: 49px;
     height: 49px;
-    background: var(--accent);
+    background: ${({ theme }) => theme.colors.accent};
     border: 2px solid #ffffff;
     box-sizing: border-box;
     border-radius: 50%;
-    @include displayFlex();
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -18,5 +16,8 @@
     i {
       font-size: 15px;
     }
-  }
-}
+`;
+
+export const Button = styled.button`
+  ${ButtonStyle}
+`;

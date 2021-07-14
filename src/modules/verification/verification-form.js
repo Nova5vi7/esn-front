@@ -4,7 +4,7 @@ import React from 'react';
 
 import style from '../../styles/modules/verification.module.scss';
 import Button from '../components/button/button';
-import CircleButton from '../components/button/circle-button';
+import CircleButton from '@/components/circle-button/circle-button';
 import CropperImage from '../components/image-cropper/cropper-image';
 import Input from '../components/input/input';
 import InputFile from '../components/input/input-file';

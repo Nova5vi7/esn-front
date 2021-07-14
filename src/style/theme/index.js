@@ -23,10 +23,10 @@ const Theme = {
     }
   },
   boxShadow:
-    '0 20px 25px -5px rgba(0,0,0,.1), 0 10px 10px -5px rgba(0,0,0,.04)',
+    '0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08)',
   typo: {
     fonts: {
-      default: 'Roboto, sans-serif',
+      default: 'IBMPlexSans-Regular, sans-serif',
       secondary: 'Arial, sans-serif'
     },
     weights: {
