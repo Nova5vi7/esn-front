@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { Form } from 'formik';
 
-const verificationStyle = css`
+const verificationFormStyle = css`
   padding: 90px 0;
   max-width: 630px;
   width: 100%;
@@ -22,7 +22,7 @@ const formStyle = css`
 `;
 
 export const VerificationWrap = styled.div`
-  ${verificationStyle}
+  ${verificationFormStyle}
 `;
 
 export const FormWrap = styled.div`

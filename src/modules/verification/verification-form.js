@@ -5,7 +5,7 @@ import {
   VerificationWrap,
   FormComponent,
   FormWrap
-} from './verification-style';
+} from '@/components/form/verification-form-style';
 
 import Button from '../components/button/button';
 import { ButtonWrap } from '../components/button/button-style';
