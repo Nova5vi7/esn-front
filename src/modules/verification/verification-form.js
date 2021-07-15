@@ -2,17 +2,17 @@ import { Field, Formik } from 'formik';
 import React from 'react';
 
 import {
-  VerificationWrap,
   FormComponent,
-  FormWrap
+  FormWrap,
+  VerificationWrap
 } from '@/components/form/verification-form-style';
+import CropperContainer from '@/components/image-cropper/cropper-container';
 
 import Button from '../components/button/button';
 import { ButtonWrap } from '../components/button/button-style';
-import CropperContainer from '@/components/image-cropper/cropper-container';
 import Input from '../components/input/input';
-import { InputWrap, InputsWrap } from '../components/input/input-style';
 import InputPhone from '../components/input/input-phone';
+import { InputsWrap, InputWrap } from '../components/input/input-style';
 import isValidName from './verifiers/is-valid-name';
 import isValidPhone from './verifiers/is-valid-phone';
 

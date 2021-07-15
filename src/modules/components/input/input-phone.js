@@ -3,8 +3,7 @@ import 'react-phone-input-2/lib/style.css';
 import React, { useCallback } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
-
-import { InputPhone, Error } from './input-style';
+import { Error, InputPhone } from './input-style';
 
 const InputPhoneComponent = ({
   field: { name, value },

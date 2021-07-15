@@ -17,8 +17,8 @@ const cropperContainerStyle = css`
 const buttonGroupStyle = css`
   position: absolute;
   bottom: 0;
-  left: ${props => props.left};
-  right: ${props => props.right};
+  left: ${properties => properties.left};
+  right: ${properties => properties.right};
 `;
 
 export const CropperContainerStyle = styled.div`

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { PageWrap } from './layouts-style';
 import Header from '../header/header';
+import { PageWrap } from './layouts-style';
 
 const mainWrap = ({ children }) => (
   <>

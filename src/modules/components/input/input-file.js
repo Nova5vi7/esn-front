@@ -1,8 +1,15 @@
 import React from 'react';
+
 import { InputFile } from './input-style';
 
-
-const InputFileComponent = ({ field, type, placeholder, id, onChange, inputRef }) => (
+const InputFileComponent = ({
+  field,
+  type,
+  placeholder,
+  id,
+  onChange,
+  inputRef
+}) => (
   <InputFile
     type={type}
     placeholder={placeholder}

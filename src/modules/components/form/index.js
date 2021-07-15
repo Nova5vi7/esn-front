@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
 import { Form } from 'formik';
+import styled, { css } from 'styled-components';
 
 const FormWrapStyle = css`
   max-width: 409px;

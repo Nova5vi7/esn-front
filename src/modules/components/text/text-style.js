@@ -45,7 +45,7 @@ export const Text = styled.p`
   ${defaultStyle}
 `;
 
-export const Link = styled.a` 
+export const Link = styled.a`
   background-color: inherit;
   border: none;
   padding: 0;

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { Header } from './header-style';
 import Link from '../components/text/link';
+import { Header } from './header-style';
 
 const HeaderContainer = () => (
   <Header>

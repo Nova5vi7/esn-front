@@ -5,8 +5,8 @@ import {
   AuthWrap,
   BlockLeft,
   BlockRight,
-  Text,
-  LogoWrap
+  LogoWrap,
+  Text
 } from './layouts-style';
 
 const Auth = ({ children }) => (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Input, Error } from './input-style';
+import { Error, Input } from './input-style';
 
 const InputComponent = ({
   field,

@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
 import { useStore } from '../store';
-import GlobalStyles from '../style/global-styles';
 import Fonts from '../style/fonts';
+import GlobalStyles from '../style/global-styles';
 import Theme from '../style/theme';
 
 const App = ({ Component, pageProps }) => {
@@ -17,7 +17,7 @@ const App = ({ Component, pageProps }) => {
       <Head>
         <title>Title here</title>
       </Head>
-      <Fonts/>
+      <Fonts />
       <ThemeProvider theme={Theme}>
         <GlobalStyles />
 

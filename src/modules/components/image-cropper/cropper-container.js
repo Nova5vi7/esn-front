@@ -1,14 +1,15 @@
-import React from 'react';
 import { Field } from 'formik';
 import Image from 'next/image';
+import React from 'react';
 
 import CircleButton from '@/components/circle-button/circle-button';
 import InputFile from '@/components/input/input-file';
+
 import CropperImage from './cropper-image';
 import {
-  CropperWrap,
+  ButtonGroup,
   CropperContainerStyle,
-  ButtonGroup
+  CropperWrap
 } from './cropper-style';
 
 const CropperContainer = ({
