@@ -1,7 +1,7 @@
 import { Form } from 'formik';
 import styled, { css } from 'styled-components';
 
-const FormWrapStyle = css`
+const formWrapStyle = css`
   max-width: 409px;
   width: 100%;
   height: 100%;
@@ -12,15 +12,15 @@ const FormWrapStyle = css`
   margin-left: 125px;
 `;
 
-const FormStyle = css`
+const formStyle = css`
   width: 100%;
   margin-bottom: 100px;
 `;
 
 export const FormWrap = styled.div`
-  ${FormWrapStyle}
+  ${formWrapStyle}
 `;
 
 export const FormComponent = styled(Form)`
-  ${FormStyle}
+  ${formStyle}
 `;

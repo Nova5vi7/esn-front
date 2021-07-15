@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const ButtonStyle = css`
+const buttonStyle = css`
   width: 49px;
   height: 49px;
   background: ${({ theme }) => theme.colors.accent};
@@ -16,5 +16,5 @@ const ButtonStyle = css`
 `;
 
 export const Button = styled.button`
-  ${ButtonStyle}
+  ${buttonStyle}
 `;

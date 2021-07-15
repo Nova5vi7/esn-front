@@ -68,7 +68,7 @@ const getBackground = buttonType => {
   }
 };
 
-const ButtonStyle = css`
+const buttonStyle = css`
   width: 100%;
   height: 56px;
   border: none;
@@ -99,19 +99,19 @@ const ButtonStyle = css`
   }
 `;
 
-const ButtonWrapStyle = css`
+const buttonWrapStyle = css`
   width: 100%;
 `;
 
 export const Button = styled.button`
-  ${ButtonStyle}
+  ${buttonStyle}
 `;
 
 export const ButtonWrap = styled.div`
-  ${ButtonWrapStyle}
+  ${buttonWrapStyle}
 `;
 
 export const ButtonLink = styled.a`
   text-decoration: none;
-  ${ButtonStyle}
+  ${buttonStyle}
 `;

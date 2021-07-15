@@ -6,9 +6,7 @@ import { ButtonWrap } from '../components/button/button-style';
 import { FormComponent, FormWrap } from '../components/form';
 import Input from '../components/input/input';
 import { InputWrap } from '../components/input/input-style';
-import Link from '../components/text/link';
-import Text from '../components/text/text';
-import Title from '../components/text/title';
+import { Link, Title, Text } from '../components/text/';
 
 const SignInFormComponent = ({
   captions,
