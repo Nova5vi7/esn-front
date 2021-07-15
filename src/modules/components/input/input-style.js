@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import PhoneInput from 'react-phone-input-2';
 
 const inputWrapStyle = css`
   position: relative;
@@ -38,17 +37,20 @@ const inputStyle = css`
 `;
 
 const inputPhoneStyle = css`
-  height: 100% !important;
-  padding: 16px 16px 16px 48px !important;
-  border: 1px solid ${({ theme }) => theme.colors.shade} !important;
-  font-size: ${({ theme }) => theme.ms(2)} !important;
-  line-height: ${({ theme }) => theme.ms(2)} !important;
-  box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
-  box-sizing: border-box;
-  border-radius: 6px !important;
-  background: ${({ theme }) => theme.colors.bright} !important;
-  @include fontPlexSans();
-  color: ${({ theme }) => theme.colors.muted};
+  input {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 16px 16px 16px 48px !important;
+    border: 1px solid ${({ theme }) => theme.colors.shade} !important;
+    font-size: ${({ theme }) => theme.ms(2)} !important;
+    line-height: ${({ theme }) => theme.ms(2)} !important;
+    box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+    box-sizing: border-box;
+    border-radius: 6px !important;
+    background: ${({ theme }) => theme.colors.bright} !important;
+    @include fontPlexSans();
+    color: ${({ theme }) => theme.colors.muted};
+  }
 `;
 
 const inputFileStyle = css`
@@ -81,12 +83,12 @@ export const Input = styled.input`
   ${inputStyle}
 `;
 
-export const InputPhone = styled(PhoneInput)`
-    ${inputPhoneStyle}
+export const InputPhone = styled.div`
+  ${inputPhoneStyle}
 `;
 
 export const InputFile = styled.input`
-    ${inputFileStyle}
+  ${inputFileStyle}
 `;
 
 export const Error = styled.div`

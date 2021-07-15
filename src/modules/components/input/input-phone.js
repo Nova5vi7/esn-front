@@ -1,6 +1,8 @@
 import 'react-phone-input-2/lib/style.css';
 
 import React, { useCallback } from 'react';
+import PhoneInput from 'react-phone-input-2';
+
 
 import { InputPhone, Error } from './input-style';
 
@@ -21,8 +23,8 @@ const InputPhoneComponent = ({
   const hasError = errors[`${name}`] && touched[`${name}`];
 
   return (
-    <div>
-      <InputPhone
+    <InputPhone>
+      <PhoneInput
         type={type}
         placeholder={placeholder}
         id={id}
@@ -32,7 +34,7 @@ const InputPhoneComponent = ({
         onChange={onValueChange}
       />
       {hasError && <Error>{errors[`${name}`]}</Error>}
-    </div>
+    </InputPhone>
   );
 };
 
