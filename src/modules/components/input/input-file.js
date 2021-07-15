@@ -1,7 +1,9 @@
 import React from 'react';
+import { InputFile } from './input-style';
 
-const InputFile = ({ field, type, placeholder, id, onChange, inputRef }) => (
-  <input
+
+const InputFileComponent = ({ field, type, placeholder, id, onChange, inputRef }) => (
+  <InputFile
     type={type}
     placeholder={placeholder}
     id={id}
@@ -11,4 +13,4 @@ const InputFile = ({ field, type, placeholder, id, onChange, inputRef }) => (
   />
 );
 
-export default InputFile;
+export default InputFileComponent;

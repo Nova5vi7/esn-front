@@ -1,7 +1,6 @@
 import 'react-phone-input-2/lib/style.css';
 
 import React, { useCallback } from 'react';
-import PhoneInput from 'react-phone-input-2';
 
 import { InputPhone, Error } from './input-style';
 
@@ -23,7 +22,7 @@ const InputPhoneComponent = ({
 
   return (
     <div>
-      <PhoneInput
+      <InputPhone
         type={type}
         placeholder={placeholder}
         id={id}
@@ -37,4 +36,4 @@ const InputPhoneComponent = ({
   );
 };
 
-export default InputPhone;
+export default InputPhoneComponent;

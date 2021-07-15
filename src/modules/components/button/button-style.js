@@ -82,8 +82,6 @@ const ButtonStyle = css`
   align-items: center;
   font-family: ${({ theme }) => theme.typo.fonts.default};
   font-weight: ${({ theme }) => theme.typo.weights.medium};
-  // font-size: 16px;
-  // line-height: 1.25;
   font-size: ${({ theme: { ms } }) => ms(2)};
   line-height: ${({ theme: { ms } }) => ms(2)};
   cursor: pointer;
@@ -101,8 +99,16 @@ const ButtonStyle = css`
   }
 `;
 
+const ButtonWrapStyle = css`
+  width: 100%;
+`;
+
 export const Button = styled.button`
   ${ButtonStyle}
+`;
+
+export const ButtonWrap = styled.div`
+  ${ButtonWrapStyle}
 `;
 
 export const ButtonLink = styled.a`

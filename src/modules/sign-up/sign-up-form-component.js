@@ -1,10 +1,15 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import React from 'react';
 
-import style from '../../styles/modules/forms.module.scss';
+import { InputWrap } from '../components/input/input-style';
+import { FormWrap, FormComponent } from '../components/form';
+
+
 import Button from '../components/button/button';
+import {ButtonWrap} from '../components/button/button-style';
 import Input from '../components/input/input';
 import Link from '../components/text/link';
+import Text from '../components/text/text';
 import Title from '../components/text/title';
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidName from '../verification/verifiers/is-valid-name';
@@ -14,13 +19,13 @@ const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
   const { title, text, linkText, href } = captions;
 
   return (
-    <div className={style.form_container}>
+    <FormWrap>
       <Title>{title}</Title>
 
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ isValid, handleSubmit, dirty }) => (
-          <Form className={style.formsSignUp}>
-            <div className={style.inputWrap}>
+          <FormComponent>
+            <InputWrap>
               <Field
                 type="name"
                 placeholder="Name"
@@ -28,9 +33,9 @@ const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
                 validate={isValidName}
                 component={Input}
               />
-            </div>
+            </InputWrap>
 
-            <div className={style.inputWrap}>
+            <InputWrap>
               <Field
                 type="email"
                 placeholder="Email"
@@ -38,9 +43,9 @@ const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
                 validate={isValidEmail}
                 component={Input}
               />
-            </div>
+            </InputWrap>
 
-            <div className={style.inputWrap}>
+            <InputWrap>
               <Field
                 type="password"
                 placeholder="Password"
@@ -48,21 +53,21 @@ const SignUpFormComponent = ({ captions, handleSubmit, initialValues }) => {
                 validate={isValidPassword}
                 component={Input}
               />
-            </div>
-            <div className={style.buttonWrap}>
+            </InputWrap>
+            <ButtonWrap>
               <Button onClick={handleSubmit} valid={isValid} dirty={dirty}>
                 Sign up
               </Button>
-            </div>
-          </Form>
+            </ButtonWrap>
+          </FormComponent>
         )}
       </Formik>
 
-      <div className={style.link_wrap}>
-        <p>{text}</p>
+      <div>
+        <Text display={'inline-block'}>{text}</Text>
         <Link href={href}>{linkText}</Link>
       </div>
-    </div>
+    </FormWrap>
   );
 };
 

@@ -1,6 +1,17 @@
 import styled, { css } from 'styled-components';
+import PhoneInput from 'react-phone-input-2';
 
-const InputStyle = css`
+const inputWrapStyle = css`
+  position: relative;
+  width: 100%;
+  margin-bottom: 28px;
+
+  &:last-child {
+    margin: 0;
+  }
+`;
+
+const inputStyle = css`
   position: relative;
   width: 100%;
   padding: 16px;
@@ -11,8 +22,8 @@ const InputStyle = css`
   border-radius: 6px;
   color: ${({ theme }) => theme.colors.muted};
   font-family: ${({ theme }) => theme.typo.fonts.default};
-  font-size: 16px;
-  line-height: 1.25;
+  font-size: ${({ theme }) => theme.ms(2)};
+  line-height: ${({ theme }) => theme.ms(2)};
 
   &:focus {
     border: 1px solid ${({ theme }) => theme.colors.accent};
@@ -20,43 +31,64 @@ const InputStyle = css`
 
   &:placeholder {
     color: ${({ theme }) => theme.colors.muted};
-    font-size: 16px;
-    line-height: 1.25;
+    font-size: ${({ theme }) => theme.ms(2)};
+    line-height: ${({ theme }) => theme.ms(2)};
     color: rgba(255, 255, 255, 0.6);
   }
 `;
 
-const InputPhoneStyle = css`
-    height: 100% !important;
-    padding: 16px 16px 16px 48px !important;
-    border: 1px solid ${({ theme }) => theme.colors.shade} !important;
-    font-size: 16px !important;
-    line-height: 1.25 !important;
-    box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
-    box-sizing: border-box;
-    border-radius: 6px !important;
-    background: ${({ theme }) => theme.colors.bright} !important;
-    @include fontPlexSans();
-    color: ${({ theme }) => theme.colors.muted};
+const inputPhoneStyle = css`
+  height: 100% !important;
+  padding: 16px 16px 16px 48px !important;
+  border: 1px solid ${({ theme }) => theme.colors.shade} !important;
+  font-size: ${({ theme }) => theme.ms(2)} !important;
+  line-height: ${({ theme }) => theme.ms(2)} !important;
+  box-shadow: 0px 4px 8px rgb(44 39 56 / 4%);
+  box-sizing: border-box;
+  border-radius: 6px !important;
+  background: ${({ theme }) => theme.colors.bright} !important;
+  @include fontPlexSans();
+  color: ${({ theme }) => theme.colors.muted};
 `;
 
-const ErrorStyle = css`
+const inputFileStyle = css`
+  display: none;
+`;
+
+const errorStyle = css`
   position: absolute;
   bottom: -20px;
-  font-size: 14px;
-  line-height: 1.28;
+  font-size: ${({ theme }) => theme.ms(1.5)};
+  line-height: ${({ theme }) => theme.ms(1.5)};
   color: ${({ theme }) => theme.colors.error};
   font-family: 'IBMPlexSans-Regular', sans-serif;
 `;
 
-export const Input = styled.input`
-  ${InputStyle}
+const inputsWrapStyle = css`
+  width: 100%;
+  margin-bottom: 80px;
 `;
 
-export const InputPhone = styled.input`
-  ${InputPhoneStyle}
+export const InputsWrap = styled.div`
+  ${inputsWrapStyle}
+`;
+
+export const InputWrap = styled.div`
+  ${inputWrapStyle}
+`;
+
+export const Input = styled.input`
+  ${inputStyle}
+`;
+
+export const InputPhone = styled(PhoneInput)`
+    ${inputPhoneStyle}
+`;
+
+export const InputFile = styled.input`
+    ${inputFileStyle}
 `;
 
 export const Error = styled.div`
-  ${ErrorStyle}
+  ${errorStyle}
 `;
