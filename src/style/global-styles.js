@@ -76,10 +76,6 @@ const GlobalStyles = createGlobalStyle`
     flex-direction: column;
     align-items: center;
   }
-  
-  .react-tel-input .country-list .country {
-    color:  ${({ theme }) => theme.colors.muted};
-  }
 
 `;
 
