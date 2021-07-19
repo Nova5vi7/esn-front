@@ -31,7 +31,7 @@ module.exports = {
     'no-console': 'off',
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
+    'simple-import-sort/exports': 'off',
     'unicorn/filename-case': 'off',
     'unicorn/prefer-module': 'off',
     'sonarjs/no-small-switch': 'off',
