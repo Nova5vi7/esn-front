@@ -30,8 +30,8 @@ const blockRightStyle = css`
 
 const textStyle = css`
   font-family: ${({ theme }) => theme.typo.fonts.default};
-  font-weight: 500;
-  font-size: 72px;
+  font-weight: ${({ theme }) => theme.typo.weights.medium};
+  font-size: ${({ theme }) => theme.ms(15.2)};
   line-height: 1.29;
   text-align: center;
   text-transform: uppercase;

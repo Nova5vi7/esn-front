@@ -5,7 +5,7 @@ const defaultStyle = css`
 `;
 
 export const H1 = styled.h1`
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.typo.weights.medium};
   font-size: ${({ theme }) => theme.ms(13)};
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 28px;
@@ -16,7 +16,7 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  font-weight: 700;
+  font-weight: ${({ theme }) => theme.typo.weights.bold};
   font-size: ${({ theme }) => theme.ms(9)};
   color: ${({ theme }) => theme.colors.primary};
   margin-bottom: 28px;
