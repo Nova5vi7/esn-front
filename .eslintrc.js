@@ -30,7 +30,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'react/prop-types': 'off',
-    'simple-import-sort/imports': 'error',
+    'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
     'unicorn/filename-case': 'off',
     'unicorn/prefer-module': 'off',
