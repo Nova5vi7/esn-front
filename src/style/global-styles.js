@@ -70,12 +70,6 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     margin: 0 auto;
   }
-  
-  form {
-    @include displayFlex();
-    flex-direction: column;
-    align-items: center;
-  }
 
 `;
 
