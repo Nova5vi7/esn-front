@@ -3,30 +3,34 @@ import { useEffect, useState } from 'react';
 import verifyToken from '../../../services/auth/verify-token';
 
 const withAuth = WrappedComponent => {
-  return props => {
+  return properties => {
     const Router = useRouter();
     const [verified, setVerified] = useState(false);
 
-    useEffect(async () => {
-      const accessToken = localStorage.getItem('token');
+    useEffect(() => {
+      const verifyLogic = async () => {
+        const accessToken = localStorage.getItem('token');
 
-      if (!accessToken) {
-        Router.replace('/sign-in');
-      } else {
-        const data = await verifyToken();
-
-        if (data) {
-          setVerified(true);
-        } else {
-          localStorage.removeItem('token');
-
+        if (!accessToken) {
           Router.replace('/sign-in');
+        } else {
+          const data = await verifyToken();
+
+          if (data) {
+            setVerified(true);
+          } else {
+            localStorage.removeItem('token');
+
+            Router.replace('/sign-in');
+          }
         }
-      }
-    }, []);
+      };
+
+      verifyLogic(); //TODO Проверить работу этой функции
+    }, [verified]);
 
     if (verified) {
-      return <WrappedComponent {...props} />;
+      return <WrappedComponent {...properties} />;
     } else {
       return null;
     }
