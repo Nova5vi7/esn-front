@@ -5,7 +5,7 @@ import {Text} from "../components/text";
 
 const UserActivate = ({tokenValid, userToken}) =>  (
     <Message>
-      <Text>{tokenValid ? 'Activation token is not valid' : `Activation was successful. Congratulations ${userToken} !!!!!`}</Text>
+      <Text>{tokenValid ? `Activation token (${userToken}) is not valid` : `Activation was successful. Congratulations ${userToken} !!!!!`}</Text>
     </Message>
   );
 

@@ -12,7 +12,7 @@ const UserActivateContainer = () => {
   useEffect(async () => {
     if (userToken) {
       try {
-        await activationUser(userToken, setTokenValid);
+        await activationUser(userToken);
       }catch (err) {
         setTokenValid(true)
       }
