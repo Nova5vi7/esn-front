@@ -1,5 +1,6 @@
 import { MenuItem, MenuWrapper } from 'modules/components/menu';
 import Link from 'modules/components/text/link';
+import { Container } from 'style/grid/index';
 import Head from 'next/head';
 import React from 'react';
 
@@ -19,7 +20,7 @@ const pages = [
 ];
 
 const Home = () => (
-  <div className="container">
+  <Container>
     <Head>
       <title>Create Next App</title>
       <link rel="icon" href="/favicon.ico" />
@@ -33,6 +34,6 @@ const Home = () => (
         ))}
       </MenuWrapper>
     </div>
-  </div>
+  </Container>
 );
 export default Home;

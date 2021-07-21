@@ -1,12 +1,12 @@
 import React from 'react';
 
-import style from '../../styles/modules/page-wrap.module.scss';
 import Header from '../header/header';
+import { PageWrap } from './layouts-style';
 
 const mainWrap = ({ children }) => (
   <>
     <Header />
-    <div className={style.contantWrap}>{children}</div>
+    <PageWrap>{children}</PageWrap>
   </>
 );
 

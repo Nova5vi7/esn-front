@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { Button } from './button-styles';
+import { Button } from './button-style';
 
 const ButtonComponent = ({
   children,
@@ -31,7 +31,7 @@ ButtonComponent.propTypes = {
 };
 
 ButtonComponent.defaultProps = {
-  btnType: 'secondary',
+  btnType: 'default',
   disabled: false,
   type: 'button'
 };

@@ -1,11 +1,12 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import React from 'react';
 
-import style from '../../styles/modules/forms.module.scss';
 import Button from '../components/button/button';
+import { ButtonWrap } from '../components/button/button-style';
+import { FormComponent, FormWrap } from '../components/form';
 import Input from '../components/input/input';
-import Link from '../components/text/link';
-import Title from '../components/text/title';
+import { InputWrap } from '../components/input/input-style';
+import { Link, Text, Title } from '../components/text/';
 
 const SignInFormComponent = ({
   captions,
@@ -17,13 +18,13 @@ const SignInFormComponent = ({
   const { title, text, linkText, href } = captions;
 
   return (
-    <div className={style.form_container}>
+    <FormWrap>
       <Title>{title}</Title>
 
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         {({ values, isValidating, handleSubmit, dirty }) => (
-          <Form className={style.formsLogIn}>
-            <div className={style.inputWrap}>
+          <FormComponent>
+            <InputWrap>
               <Field
                 type="email"
                 placeholder="Email"
@@ -31,9 +32,9 @@ const SignInFormComponent = ({
                 validate={isValidEmail}
                 component={Input}
               />
-            </div>
+            </InputWrap>
 
-            <div className={style.inputWrap}>
+            <InputWrap>
               <Field
                 type="password"
                 placeholder="Password"
@@ -42,21 +43,21 @@ const SignInFormComponent = ({
                 validate={isValidPassword}
                 component={Input}
               />
-            </div>
-            <div className={style.buttonWrap}>
+            </InputWrap>
+            <ButtonWrap>
               <Button onClick={handleSubmit} valid={isValidating} dirty={dirty}>
                 Sign in
               </Button>
-            </div>
-          </Form>
+            </ButtonWrap>
+          </FormComponent>
         )}
       </Formik>
 
-      <div className={style.link_wrap}>
-        <p>{text}</p>
+      <div>
+        <Text display={'inline-block'}>{text}</Text>
         <Link href={href}>{linkText}</Link>
       </div>
-    </div>
+    </FormWrap>
   );
 };
 

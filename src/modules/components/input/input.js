@@ -1,20 +1,20 @@
 import React from 'react';
 
-import styleInput from '../../../styles/modules/input.module.scss';
+import { Error, Input } from './input-style';
 
-const Input = ({ field, type, placeholder, id, form: { touched, errors } }) => (
+const InputComponent = ({
+  field,
+  type,
+  placeholder,
+  id,
+  form: { touched, errors }
+}) => (
   <>
-    <input
-      type={type}
-      placeholder={placeholder}
-      className={styleInput.input}
-      id={id}
-      {...field}
-    />
+    <Input type={type} placeholder={placeholder} id={id} {...field} />
     {errors[field.name] && touched[field.name] && (
-      <div className={styleInput.error}>{errors[field.name]}</div>
+      <Error>{errors[field.name]}</Error>
     )}
   </>
 );
 
-export default Input;
+export default InputComponent;

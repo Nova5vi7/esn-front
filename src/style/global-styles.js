@@ -16,32 +16,61 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     font-size: 1.5rem;
     line-height: 1;
-    font-family: Roboto, sans-serif;
+    font-family: 'IBMPlexSans-Regular', sans-serif; 
+    position: relative;
+    margin: 0;
+    color:  ${({ theme }) => theme.colors.bright};
 
     #__next {
       width: 100%;
-      height: 100%;
-      display: flex;
+      height: 100vh;
     }
   }
 
   *,
   *::before,
   *::after {
-    box-sizing: inherit;
     outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   }
 
   [type="search"] {
     appearance: initial;
   }
-
+  
   h1,
   h2,
   h3,
-  h4 {
-    margin-top: 0;
+  h4,
+  h5,
+  h6,
+  p,
+  ul {
+    margin: 0;
+    font-weight: normal;
   }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    padding: 0;
+ 
+    li {
+      list-style: none;
+    }
+  }
+  
+  .container {
+    max-width: 1290px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
 `;
 
 export default GlobalStyles;

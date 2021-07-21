@@ -3,9 +3,9 @@ import 'react-phone-input-2/lib/style.css';
 import React, { useCallback } from 'react';
 import PhoneInput from 'react-phone-input-2';
 
-import styleInput from '../../../styles/modules/input-phone.module.scss';
+import { Error, InputPhone } from './input-style';
 
-const InputPhone = ({
+const InputPhoneComponent = ({
   field: { name, value },
   type,
   placeholder,
@@ -22,7 +22,7 @@ const InputPhone = ({
   const hasError = errors[`${name}`] && touched[`${name}`];
 
   return (
-    <div className={styleInput.inputPhone}>
+    <InputPhone>
       <PhoneInput
         type={type}
         placeholder={placeholder}
@@ -32,9 +32,9 @@ const InputPhone = ({
         country={'us'}
         onChange={onValueChange}
       />
-      {hasError && <div className={styleInput.error}>{errors[`${name}`]}</div>}
-    </div>
+      {hasError && <Error>{errors[`${name}`]}</Error>}
+    </InputPhone>
   );
 };
 
-export default InputPhone;
+export default InputPhoneComponent;

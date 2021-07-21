@@ -1,4 +1,5 @@
 import Link from './link';
+import Text from './text';
 import Title from './title';
 
-export { Link, Title };
+export { Link, Text, Title };

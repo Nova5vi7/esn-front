@@ -1,12 +1,18 @@
 import React from 'react';
 
-import styleInput from '../../../styles/modules/input.module.scss';
+import { InputFile } from './input-style';
 
-const InputFile = ({ field, type, placeholder, id, onChange, inputRef }) => (
-  <input
+const InputFileComponent = ({
+  field,
+  type,
+  placeholder,
+  id,
+  onChange,
+  inputRef
+}) => (
+  <InputFile
     type={type}
     placeholder={placeholder}
-    className={styleInput.input}
     id={id}
     {...field}
     onChange={onChange}
@@ -14,4 +20,4 @@ const InputFile = ({ field, type, placeholder, id, onChange, inputRef }) => (
   />
 );
 
-export default InputFile;
+export default InputFileComponent;

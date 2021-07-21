@@ -1,11 +1,16 @@
 import styled, { css } from 'styled-components';
 
 const defaultStyle = css`
-  background: ${({ theme }) => theme.colors.main};
-  color: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.tint};
 
   &:hover {
-    background: ${({ theme }) => theme.colors.hover.main};
+    box-shadow: 0px 12px 24px rgba(44, 39, 56, 0.08),
+      0px 24px 48px rgba(44, 39, 56, 0.16);
+  }
+
+  &:active {
+    border: 2px solid rgba(44, 39, 56, 0.86);
   }
 `;
 
@@ -42,8 +47,8 @@ const disabledStyle = css`
 `;
 
 const initialStyle = css`
-  background: ${({ theme }) => theme.colors.gray};
-  color: ${({ theme }) => theme.colors.dark};
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.white};
 `;
 
 const getBackground = buttonType => {
@@ -63,22 +68,29 @@ const getBackground = buttonType => {
   }
 };
 
-const ButtonStyle = css`
+const buttonStyle = css`
+  width: 100%;
+  height: 56px;
   border: none;
-  padding: 10px 15px;
+  padding: 0 20px;
+  box-shadow: ${({ theme }) => theme.typo.boxShadow};
+  border-radius: 6px;
+  box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  border-radius: 5px;
-  vertical-align: top;
+  justify-content: center;
   align-items: center;
+  font-family: ${({ theme }) => theme.typo.fonts.default};
+  font-weight: ${({ theme }) => theme.typo.weights.medium};
   font-size: ${({ theme: { ms } }) => ms(2)};
   line-height: ${({ theme: { ms } }) => ms(2)};
+  cursor: pointer;
   transition: all 0.3s ease;
-  margin: 0 ${({ theme: { ms } }) => ms(-7)};
   ${({ btnType }) => getBackground(btnType)};
 
   &:disabled {
-    opacity: 0.6;
+    background: ${({ theme }) => theme.colors.shade};
+    color: ${({ theme }) => theme.colors.shade};
     pointer-events: none;
   }
 
@@ -87,11 +99,19 @@ const ButtonStyle = css`
   }
 `;
 
+const buttonWrapStyle = css`
+  width: 100%;
+`;
+
 export const Button = styled.button`
-  ${ButtonStyle}
+  ${buttonStyle}
+`;
+
+export const ButtonWrap = styled.div`
+  ${buttonWrapStyle}
 `;
 
 export const ButtonLink = styled.a`
   text-decoration: none;
-  ${ButtonStyle}
+  ${buttonStyle}
 `;

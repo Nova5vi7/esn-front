@@ -1,22 +1,20 @@
 import Image from 'next/image';
 import React from 'react';
 
-import style from '../../styles/modules/header.module.scss';
 import Link from '../components/text/link';
+import { Container } from 'style/grid/index';
+import { Header } from './header-style';
 
-const Header = () => (
-  <div className={style.header}>
-    <div className="container">
-      <div className={style.header__wrap}>
-        <div className={style.header__logoWrap}>
-          <Link href="/">
-            <Image src="/images/logo.png" alt="Logo" width={79} height={79} />
-          </Link>
-        </div>
-        <div className={style.header__navWrap} />
+const HeaderContainer = () => (
+  <Header>
+    <Container>
+      <div>
+        <Link href="/">
+          <Image src="/images/logo.png" alt="Logo" width={79} height={79} />
+        </Link>
       </div>
-    </div>
-  </div>
+    </Container>
+  </Header>
 );
 
-export default Header;
+export default HeaderContainer;
