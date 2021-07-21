@@ -9,14 +9,18 @@ const UserActivateContainer = () => {
   const { query } = useRouter();
   const userToken = query.id;
 
-  useEffect(async () => {
-    if (userToken) {
-      try {
-        await activationUser(userToken);
-      }catch (err) {
-        setTokenValid(true)
+  useEffect(() => {
+    const activation = async () => {
+      if (userToken) {
+        try {
+          await activationUser(userToken);
+        } catch {
+          setTokenValid(true);
+        }
       }
-    }
+    };
+
+    activation(); //TODO Проверить работу этой функции
   }, [userToken]);
 
   return <UserActivate tokenValid={tokenValid} userToken={userToken} />;
