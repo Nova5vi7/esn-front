@@ -1,12 +1,12 @@
 import React from 'react';
 
 import Header from '../header/header';
-import { PageWrap } from './layouts-style';
+import { ContentWrap } from './layouts-style';
 
 const mainWrap = ({ children }) => (
   <>
     <Header />
-    <PageWrap>{children}</PageWrap>
+    <ContentWrap>{children}</ContentWrap>
   </>
 );
 
