@@ -33,19 +33,17 @@ const UserActivateContainer = () => {
     activation(userToken);
   }, [activation, userToken]);
 
-  return (
-    <>
-      {loadingStatus ? (
-        <LoadingComponent />
-      ) : (
-        <UserActivate
-          tokenValid={tokenValid}
-          userToken={userToken}
-          captions={captions}
-        />
-      )}
-    </>
-  );
+  if (loadingStatus) {
+    return <LoadingComponent />;
+  } else {
+    return (
+      <UserActivate
+        tokenValid={tokenValid}
+        userToken={userToken}
+        captions={captions}
+      />
+    );
+  }
 };
 
 export default UserActivateContainer;
