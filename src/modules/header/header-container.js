@@ -13,7 +13,7 @@ const HeaderContainer = () => {
     } catch (error) {
       console.log(error);
     }
-  }, []);
+  }, [router]);
 
   return <HeaderComponent onLogout={handleLogout} />;
 };
