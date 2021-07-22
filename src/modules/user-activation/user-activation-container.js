@@ -19,35 +19,31 @@ const UserActivateContainer = () => {
   } = useRouter();
 
   const activation = useCallback(async userToken => {
-    if (userToken) {
-      try {
-        await activationUser(userToken);
-        setTokenValid(true);
-        setLoadingStatus(false);
-      } catch {
-        setLoadingStatus(false);
-        setTokenValid(false);
-      }
+    if (!userToken) return;
+    try {
+      await activationUser(userToken);
+      setTokenValid(true);
+    } catch {
+      setTokenValid(false);
     }
+    setLoadingStatus(false);
   }, []);
 
   useEffect(() => {
     activation(userToken);
   }, [activation, userToken]);
 
-  return (
-    <>
-      {loadingStatus ? (
-        <LoadingComponent />
-      ) : (
-        <UserActivate
-          tokenValid={tokenValid}
-          userToken={userToken}
-          captions={captions}
-        />
-      )}
-    </>
-  );
+  if (loadingStatus) {
+    return <LoadingComponent />;
+  } else {
+    return (
+      <UserActivate
+        tokenValid={tokenValid}
+        userToken={userToken}
+        captions={captions}
+      />
+    );
+  }
 };
 
 export default UserActivateContainer;
