@@ -36,7 +36,7 @@ module.exports = {
     'unicorn/prefer-module': 'off',
     'sonarjs/no-small-switch': 'off',
     'unicorn/no-abusive-eslint-disable': 'off',
-    "react/display-name": "off",
+    'react/display-name': 'off',
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/anchor-is-valid': [
       'error',
