@@ -22,11 +22,11 @@ const WithAuth = WrappedComponent => properties => {
         Router.replace('/sign-in');
       }
     }
-  }, [])
+  }, [Router]);
 
   useEffect(() => {
     verifyLogic();
-  }, [Router, verifyLogic]);
+  }, [verifyLogic]);
 
   return <>{verified && <WrappedComponent {...properties} />}</>;
 };
