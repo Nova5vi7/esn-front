@@ -9,6 +9,7 @@ const HeaderContainer = () => {
   const handleLogout = useCallback(async () => {
     try {
       await logoutService();
+      window.localStorage.removeItem('token');
       await router.push('/');
     } catch (error) {
       console.log(error);
