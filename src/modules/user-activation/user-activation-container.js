@@ -18,37 +18,36 @@ const UserActivateContainer = () => {
     query: { id: userToken }
   } = useRouter();
 
-  const activation = useCallback(
-    async userToken => {
-      if (userToken) {
-        try {
-          await activationUser(userToken);
-          setTokenValid(true);
-          setLoadingStatus(false);
-        } catch {
-          setLoadingStatus(false);
-          setTokenValid(false);
-        }
+  const activation = useCallback(async userToken => {
+    if (userToken) {
+      try {
+        await activationUser(userToken);
+        setTokenValid(true);
+        setLoadingStatus(false);
+      } catch {
+        setLoadingStatus(false);
+        setTokenValid(false);
       }
-    },
-    [userToken]
-  );
+    }
+  }, []);
 
   useEffect(() => {
     activation(userToken);
-  }, [activation]);
+  }, [activation, userToken]);
 
-  if (loadingStatus) {
-    return <LoadingComponent />;
-  } else {
-    return (
-      <UserActivate
-        tokenValid={tokenValid}
-        userToken={userToken}
-        captions={captions}
-      />
-    );
-  }
+  return (
+    <>
+      {loadingStatus ? (
+        <LoadingComponent />
+      ) : (
+        <UserActivate
+          tokenValid={tokenValid}
+          userToken={userToken}
+          captions={captions}
+        />
+      )}
+    </>
+  );
 };
 
 export default UserActivateContainer;
