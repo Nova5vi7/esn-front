@@ -2,8 +2,8 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import verifyToken from '../../../services/auth/verify-token';
 
-const WithAuth = WrappedComponent => {
-  return properties => {
+const WithAuth = WrappedComponent =>
+  properties => {
     const Router = useRouter();
     const [verified, setVerified] = useState(false);
 
@@ -26,13 +26,11 @@ const WithAuth = WrappedComponent => {
         }
       };
 
-      verifyLogic(); //TODO Проверить работу этой функции
+      verifyLogic();
     }, [Router]);
 
     return <>{verified ? <WrappedComponent {...properties} /> : null}</>;
   };
-};
 
-WithAuth.displayName = 'WithAuth';
 
 export default WithAuth;
