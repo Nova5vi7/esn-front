@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import verifyToken from '../../../services/auth/verify-token';
 
-const withAuth = WrappedComponent => {
+const WithAuth = WrappedComponent => {
   return properties => {
     const Router = useRouter();
     const [verified, setVerified] = useState(false);
@@ -33,4 +33,6 @@ const withAuth = WrappedComponent => {
   };
 };
 
-export default withAuth;
+WithAuth.displayName = 'WithAuth';
+
+export default WithAuth;
