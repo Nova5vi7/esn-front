@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Header from '../header/header';
@@ -9,5 +10,9 @@ const mainWrap = ({ children }) => (
     <ContentWrap>{children}</ContentWrap>
   </>
 );
+
+mainWrap.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 export default mainWrap;
