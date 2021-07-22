@@ -29,11 +29,7 @@ const withAuth = WrappedComponent => {
       verifyLogic(); //TODO Проверить работу этой функции
     }, [Router]);
 
-    return (
-      <>
-        {verified ? <WrappedComponent {...properties} /> : null}
-      </>
-    )
+    return <>{verified ? <WrappedComponent {...properties} /> : null}</>;
   };
 };
 
