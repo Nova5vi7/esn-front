@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 const authWrapStyle = css`
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
 `;
@@ -37,8 +38,10 @@ const textStyle = css`
   text-transform: uppercase;
 `;
 
-const pageWrapStyle = css`
+const contentWrapStyle = css`
   width: 100%;
+  height: 100%;
+  min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.tint};
 `;
 
@@ -46,8 +49,8 @@ const logoWrapStyle = css`
   text-align: center;
 `;
 
-export const PageWrap = styled.div`
-  ${pageWrapStyle}
+export const ContentWrap = styled.div`
+  ${contentWrapStyle}
 `;
 
 export const AuthWrap = styled.div`
