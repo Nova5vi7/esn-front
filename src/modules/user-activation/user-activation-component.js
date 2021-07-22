@@ -3,10 +3,10 @@ import React from 'react';
 import { Message } from './component-style';
 import { Text } from '../components/text';
 
-const UserActivate = ({ tokenValid, captions }) => (
+const UserActivation = ({ tokenValid, captions }) => (
   <Message>
-    <Text>{tokenValid ? captions.invalidMessage : captions.validMessage}</Text>
+    <Text>{tokenValid ? captions.validMessage : captions.invalidMessage}</Text>
   </Message>
 );
 
-export default UserActivate;
+export default UserActivation;
