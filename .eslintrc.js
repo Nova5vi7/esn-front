@@ -29,8 +29,8 @@ module.exports = {
   ],
   rules: {
     'no-case-declarations': 'off',
-    'no-console': 'off',
-    'react/prop-types': 'off',
+    'no-console': 'error',
+    'react/prop-types': 'error',
     'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
     'unicorn/filename-case': 'off',
