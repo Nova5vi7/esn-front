@@ -28,8 +28,8 @@ module.exports = {
   ],
   rules: {
     'no-case-declarations': 'off',
-    'no-console': 'error',
-    'react/prop-types': 'error',
+    'no-console': 'off',
+    'react/prop-types': 'off',
     'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
     'sonarjs/no-small-switch': 'off',
