@@ -34,8 +34,9 @@ const SignUpFormContainer = () => {
         dispatch(setUser(user));
 
         await router.push('/verification');
-      } catch (e) {
+      } catch (error) {
         setLoadingStatus(false);
+        console.log(error);
       }
     },
     [router, dispatch]
