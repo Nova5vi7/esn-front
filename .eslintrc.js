@@ -23,7 +23,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:unicorn/recommended',
     'plugin:security/recommended',
     'plugin:react-hooks/recommended'
   ],
@@ -33,11 +32,7 @@ module.exports = {
     'react/prop-types': 'error',
     'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
-    'unicorn/filename-case': 'off',
-    'unicorn/prefer-module': 'off',
     'sonarjs/no-small-switch': 'off',
-    'unicorn/no-abusive-eslint-disable': 'off',
-    'unicorn/prefer-ternary': 'off',
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/anchor-is-valid': [
       'error',
