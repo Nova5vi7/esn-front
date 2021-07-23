@@ -17,19 +17,16 @@ const LocalFonts = createGlobalStyle`
 `;
 
 const getGoogleFonts = (fonts = []) => {
-  return (
-    fonts
-      // eslint-disable-next-line unicorn/no-array-reduce
-      .reduce((accumulator, font) => {
-        const accumulatorClone = [...accumulator];
-        const family = font.family.replace(/ +/g, '+');
-        const weights = (font.weights || []).join(',');
+  return fonts
+    .reduce((accumulator, font) => {
+      const accumulatorClone = [...accumulator];
+      const family = font.family.replace(/ +/g, '+');
+      const weights = (font.weights || []).join(',');
 
-        accumulatorClone.push(family + (weights && `:${weights}`));
-        return accumulatorClone;
-      }, [])
-      .join('|')
-  );
+      accumulatorClone.push(family + (weights && `:${weights}`));
+      return accumulatorClone;
+    }, [])
+    .join('|');
 };
 
 const FontLoader = ({
