@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import HeaderComponent from './header';
 import logoutService from '../../services/auth/logout';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import showNotification from 'store/notifications/actions/show';
 

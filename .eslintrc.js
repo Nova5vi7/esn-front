@@ -28,6 +28,7 @@ module.exports = {
     'plugin:react-hooks/recommended'
   ],
   rules: {
+    'no-case-declarations': 'off',
     'no-console': 'off',
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'off',
