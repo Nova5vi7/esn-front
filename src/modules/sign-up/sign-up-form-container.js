@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import signUp from 'services/auth/sign-up';
 import setUser from 'store/user/actions/set-user';
@@ -22,13 +22,21 @@ const initialValues = {
 const SignUpFormContainer = () => {
   const router = useRouter();
   const dispatch = useDispatch();
+  const [isLoading, setLoadingStatus] = useState(false);
 
   const handleSubmit = useCallback(
     async data => {
-      const { accessToken, user } = await signUp(data);
-      window.localStorage.setItem('token', accessToken);
-      dispatch(setUser(user));
-      await router.push('/verification');
+      setLoadingStatus(true);
+      try {
+        const { accessToken, user } = await signUp(data);
+
+        window.localStorage.setItem('token', accessToken);
+        dispatch(setUser(user));
+
+        await router.push('/verification');
+      } catch (e) {
+        setLoadingStatus(false);
+      }
     },
     [router, dispatch]
   );
@@ -38,6 +46,7 @@ const SignUpFormContainer = () => {
       captions={captions}
       handleSubmit={handleSubmit}
       initialValues={initialValues}
+      isLoading={isLoading}
     />
   );
 };

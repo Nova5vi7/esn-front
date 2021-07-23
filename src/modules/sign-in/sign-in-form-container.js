@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import signIn from 'services/auth/sign-in';
 
 import isValidEmail from '../verification/verifiers/is-valid-email';
@@ -20,12 +20,17 @@ const initialValues = {
 
 const SignInFormContainer = () => {
   const router = useRouter();
+  const [isLoading, setLoadingStatus] = useState(false);
 
   const handleSubmit = async data => {
+    setLoadingStatus(true);
+
     try {
-      await signIn(data);
-      router.push('/verification');
+      const { accessToken } = await signIn(data);
+      window.localStorage.setItem('token', accessToken);
+      await router.push('/verification');
     } catch (error) {
+      setLoadingStatus(false);
       console.log(error);
     }
   };
@@ -37,6 +42,7 @@ const SignInFormContainer = () => {
       isValidEmail={isValidEmail}
       isValidPassword={isValidPassword}
       initialValues={initialValues}
+      isLoading={isLoading}
     />
   );
 };

@@ -42,7 +42,8 @@ const requestInterceptor = config => {
 
 const fetcher = () => {
   const inst = axios.create({
-    baseURL: BASE_URL
+    baseURL: BASE_URL,
+    withCredentials: true // TODO!!!!!
   });
 
   inst.interceptors.response.use(responseInterceptor);
