@@ -16,10 +16,9 @@ const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
     font-size: 1.5rem;
     line-height: 1;
-    font-family: 'IBMPlexSans-Regular', sans-serif; 
+    font-family: 'IBMPlexSans-Regular', sans-serif;
     position: relative;
-    margin: 0;
-    color:  ${({ theme }) => theme.colors.bright};
+    color:  ${({ theme }) => theme.colors.primary};
 
     #__next {
       width: 100%;
@@ -40,7 +39,7 @@ const GlobalStyles = createGlobalStyle`
   [type="search"] {
     appearance: initial;
   }
-  
+
   h1,
   h2,
   h3,
@@ -52,19 +51,19 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     font-weight: normal;
   }
-  
+
   a {
     text-decoration: none;
   }
-  
+
   ul {
     padding: 0;
- 
+
     li {
       list-style: none;
     }
   }
-  
+
   .container {
     max-width: 1290px;
     width: 100%;

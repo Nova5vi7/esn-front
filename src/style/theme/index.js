@@ -49,6 +49,11 @@ const Theme = {
     sm: 550,
     md: 992,
     lg: 1400
+  },
+  borderRadius: {
+    s: 3,
+    m: 5,
+    l: 10
   }
 };
 

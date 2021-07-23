@@ -5,6 +5,9 @@ import signIn from 'services/auth/sign-in';
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidPassword from '../verification/verifiers/is-valid-password';
 import SignInFormComponent from './sign-in-form-component';
+import { useDispatch } from 'react-redux';
+import setUser from '@/store/user/actions/set-user';
+import showNotification from '@/store/notifications/actions/show';
 
 const captions = {
   title: 'Sign In',
@@ -20,18 +23,20 @@ const initialValues = {
 
 const SignInFormContainer = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const [isLoading, setLoadingStatus] = useState(false);
 
   const handleSubmit = async data => {
     setLoadingStatus(true);
 
     try {
-      const { accessToken } = await signIn(data);
+      const { accessToken, user } = await signIn(data);
       window.localStorage.setItem('token', accessToken);
+      dispatch(setUser(user));
       await router.push('/verification');
     } catch (error) {
       setLoadingStatus(false);
-      console.log(error);
+      dispatch(showNotification('alert', error.message));
     }
   };
 

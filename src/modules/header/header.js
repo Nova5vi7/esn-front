@@ -7,7 +7,7 @@ import Button from '../components/button/button';
 import { Col, Container, Row } from 'style/grid/index';
 import { Header } from './header-style';
 
-const HeaderComponent = ({ onLogout }) => (
+const HeaderComponent = ({ onLogout, testNotification }) => (
   <Header>
     <Container>
       <Row>
@@ -18,6 +18,9 @@ const HeaderComponent = ({ onLogout }) => (
         </Col>
         <Col col={{ lg: 12, md: 12, sm: 24 }}>
           <Button onClick={onLogout}>Logout</Button>
+          <Button btnType="danger" onClick={testNotification}>
+            Display notification
+          </Button>
         </Col>
       </Row>
     </Container>

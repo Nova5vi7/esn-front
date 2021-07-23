@@ -5,6 +5,7 @@ import signUp from 'services/auth/sign-up';
 import setUser from 'store/user/actions/set-user';
 
 import SignUpFormComponent from './sign-up-form-component';
+import showNotification from '@/store/notifications/actions/show';
 
 const captions = {
   title: 'Sign Up',
@@ -36,7 +37,7 @@ const SignUpFormContainer = () => {
         await router.push('/verification');
       } catch (error) {
         setLoadingStatus(false);
-        console.log(error);
+        dispatch(showNotification('alert', error.message));
       }
     },
     [router, dispatch]
