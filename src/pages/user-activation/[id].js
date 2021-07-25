@@ -1,7 +1,7 @@
 import React from 'react';
-
+import withAuth from '@/modules/wrapper/with-auth';
 import Wrap from '@/modules/layouts/main';
-import UserActivate from '../../modules/user-activation';
+import UserActivate from 'modules/user-activation';
 
 const UserActivatePage = () => (
   <Wrap>
@@ -9,4 +9,4 @@ const UserActivatePage = () => (
   </Wrap>
 );
 
-export default UserActivatePage;
+export default withAuth(UserActivatePage);
