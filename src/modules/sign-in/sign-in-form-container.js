@@ -1,10 +1,13 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import signIn from 'services/auth/sign-in';
 
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidPassword from '../verification/verifiers/is-valid-password';
 import SignInFormComponent from './sign-in-form-component';
+import { useDispatch } from 'react-redux';
+import setUser from '@/store/user/actions/set-user';
+import showNotification from '@/store/notifications/actions/show';
 
 const captions = {
   title: 'Sign In',
@@ -20,13 +23,20 @@ const initialValues = {
 
 const SignInFormContainer = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const [isLoading, setLoadingStatus] = useState(false);
 
   const handleSubmit = async data => {
+    setLoadingStatus(true);
+
     try {
-      await signIn(data);
-      router.push('/verification');
+      const { accessToken, user } = await signIn(data);
+      window.localStorage.setItem('token', accessToken);
+      dispatch(setUser(user));
+      await router.push('/verification');
     } catch (error) {
-      console.log(error);
+      setLoadingStatus(false);
+      dispatch(showNotification('alert', error.message));
     }
   };
 
@@ -37,6 +47,7 @@ const SignInFormContainer = () => {
       isValidEmail={isValidEmail}
       isValidPassword={isValidPassword}
       initialValues={initialValues}
+      isLoading={isLoading}
     />
   );
 };

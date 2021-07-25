@@ -23,17 +23,15 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:unicorn/recommended',
     'plugin:security/recommended',
     'plugin:react-hooks/recommended'
   ],
   rules: {
+    'no-case-declarations': 'off',
     'no-console': 'off',
     'react/prop-types': 'off',
     'simple-import-sort/imports': 'off',
     'simple-import-sort/exports': 'off',
-    'unicorn/filename-case': 'off',
-    'unicorn/prefer-module': 'off',
     'sonarjs/no-small-switch': 'off',
     'unicorn/no-abusive-eslint-disable': 'off',
     'react/display-name': 'off',
