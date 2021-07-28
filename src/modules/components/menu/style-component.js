@@ -18,7 +18,7 @@ export const MenuItemComponent = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      color:  ${({ theme }) => theme.colors.gray};
+      color: ${({ theme }) => theme.colors.gray};
     }
   }
 

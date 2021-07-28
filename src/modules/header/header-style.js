@@ -12,8 +12,7 @@ export const WrapContent = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  
-  
+
   &.right {
     justify-content: flex-end;
   }

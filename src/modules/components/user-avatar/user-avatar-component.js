@@ -12,7 +12,7 @@ const userAvatarComponent = ({ src, alt, type, id }) => (
 userAvatarComponent.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
-  type: PropTypes.string,
+  type: PropTypes.string
 };
 
 export default userAvatarComponent;

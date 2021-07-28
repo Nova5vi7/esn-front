@@ -29,7 +29,7 @@ const WithAuth = WrappedComponent => properties => {
       }
     }
     setLoadingStatus(false);
-  }, [router]);
+  }, [router, dispatch]);
 
   useEffect(() => {
     verifyLogic();

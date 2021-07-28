@@ -3,7 +3,15 @@ import PropTypes from 'prop-types';
 import UserAvatar from './user-avatar-component';
 
 const userAvatarContainer = ({ src, alt, type, handleDropdown, id }) => {
-  return <UserAvatar src={src} alt={alt} type={type} handleDropdown={handleDropdown} id={id}/>;
+  return (
+    <UserAvatar
+      src={src}
+      alt={alt}
+      type={type}
+      handleDropdown={handleDropdown}
+      id={id}
+    />
+  );
 };
 
 userAvatarContainer.propTypes = {

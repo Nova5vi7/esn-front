@@ -74,7 +74,7 @@ const HeaderContainer = () => {
     return () => {
       document.removeEventListener('click', handleDropdown);
     };
-  }, [dropdownVisible]);
+  }, [dropdownVisible, handleDropdown]);
 
   return (
     <HeaderComponent
