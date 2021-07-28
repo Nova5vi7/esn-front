@@ -42,7 +42,7 @@ const HeaderContainer = () => {
         setDropdownVisible(false);
       }
     },
-    [setDropdownVisible]
+    [dropdownVisible]
   );
 
   const pages = [
