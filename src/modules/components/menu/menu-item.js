@@ -1,7 +1,7 @@
+import { MenuItemComponent } from './style-component';
+
 const MenuItem = ({ children, ...rest }) => (
-  <div className="menu__item" {...rest}>
-    {children}
-  </div>
+  <MenuItemComponent {...rest}>{children}</MenuItemComponent>
 );
 
 export default MenuItem;

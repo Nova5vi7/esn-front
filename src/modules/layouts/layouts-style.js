@@ -36,6 +36,7 @@ const textStyle = css`
   line-height: 1.29;
   text-align: center;
   text-transform: uppercase;
+  color: ${({ theme }) => theme.colors.bright};
 `;
 
 const contentWrapStyle = css`

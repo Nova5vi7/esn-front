@@ -45,6 +45,7 @@ export const Text = styled.p`
   line-height: 1.5;
   margin: 0;
   color: ${({ theme, scheme }) => getTextColor(scheme, theme)};
+  display: inline-block;
   ${defaultStyle}
 `;
 
