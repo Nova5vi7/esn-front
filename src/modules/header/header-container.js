@@ -27,20 +27,23 @@ const HeaderContainer = () => {
     dispatch(showNotification('alert', 'Lorem Ipsum'));
   };
 
-  const handleDropdown = e => {
-    const target = e.target;
+  const handleDropdown = useCallback(
+    e => {
+      const target = e.target;
 
-    if (!target.closest('#toggleDropdown')) {
-      setDropdownVisible(false);
-      return;
-    }
+      if (!target.closest('#toggleDropdown')) {
+        setDropdownVisible(false);
+        return;
+      }
 
-    if (!dropdownVisible) {
-      setDropdownVisible(true);
-    } else {
-      setDropdownVisible(false);
-    }
-  };
+      if (!dropdownVisible) {
+        setDropdownVisible(true);
+      } else {
+        setDropdownVisible(false);
+      }
+    },
+    [setDropdownVisible]
+  );
 
   const pages = [
     {
