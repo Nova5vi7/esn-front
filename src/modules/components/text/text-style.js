@@ -45,8 +45,11 @@ export const Text = styled.p`
   line-height: 1.5;
   margin: 0;
   color: ${({ theme, scheme }) => getTextColor(scheme, theme)};
-  display: inline-block;
   ${defaultStyle}
+`;
+
+export const InlineWrap = styled.div`
+  display: inline-block;
 `;
 
 export const Link = styled.a`

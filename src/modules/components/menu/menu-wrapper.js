@@ -1,4 +1,4 @@
-import { MenuWrapComponent } from './style-component';
+import { MenuWrapComponent } from './menu-styles';
 
 const MenuWrapper = ({ children, ...rest }) => (
   <MenuWrapComponent {...rest}>{children}</MenuWrapComponent>

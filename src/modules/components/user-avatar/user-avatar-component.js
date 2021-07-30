@@ -1,18 +1,18 @@
 import Image from 'next/image';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { UserAvatarWrap } from './style-component';
+import { UserAvatarWrap } from './avatar-styles';
 
-const userAvatarComponent = ({ src, alt, type, id }) => (
-  <UserAvatarWrap type={type} id={id}>
+const UserAvatarComponent = ({ src, alt, type }) => (
+  <UserAvatarWrap type={type}>
     <Image src={src} alt={alt} layout="fill" />
   </UserAvatarWrap>
 );
 
-userAvatarComponent.propTypes = {
+UserAvatarComponent.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   type: PropTypes.string
 };
 
-export default userAvatarComponent;
+export default UserAvatarComponent;

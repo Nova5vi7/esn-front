@@ -1,6 +1,7 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 
+import { pages } from '../verification/helpers';
 import HeaderComponent from './header';
 import logoutService from '../../services/auth/logout';
 import { useDispatch } from 'react-redux';
@@ -27,49 +28,23 @@ const HeaderContainer = () => {
     dispatch(showNotification('alert', 'Lorem Ipsum'));
   };
 
-  const handleDropdown = useCallback(
-    e => {
-      const target = e.target;
+  const triggerDropdown = useRef(null);
 
-      if (!target.closest('#toggleDropdown')) {
+  const handleDropdown = useCallback(
+    ({ target }) => {
+      if (target !== triggerDropdown.current) {
         setDropdownVisible(false);
         return;
       }
 
       if (!dropdownVisible) {
-        setDropdownVisible(true);
+        setDropdownVisible(!dropdownVisible);
       } else {
-        setDropdownVisible(false);
+        setDropdownVisible(!dropdownVisible);
       }
     },
     [dropdownVisible]
   );
-
-  const pages = [
-    {
-      path: '/verification',
-      name: 'Verification'
-    },
-    {
-      path: '/sign-in',
-      name: 'Sign In'
-    },
-    {
-      path: '/sign-up',
-      name: 'Sign Up'
-    }
-  ];
-
-  const dropdownItem = [
-    {
-      func: () => handleLogout(),
-      text: 'Logout'
-    },
-    {
-      func: () => testNotification(),
-      text: 'Notification'
-    }
-  ];
 
   useEffect(() => {
     document.addEventListener('click', handleDropdown);
@@ -79,11 +54,23 @@ const HeaderContainer = () => {
     };
   }, [dropdownVisible, handleDropdown]);
 
+  const dropdownItem = [
+    {
+      onClick: handleLogout,
+      text: 'Logout'
+    },
+    {
+      onClick: testNotification,
+      text: 'Notification'
+    }
+  ];
+
   return (
     <HeaderComponent
       dropdownItem={dropdownItem}
       handleDropdown={handleDropdown}
       dropdownVisible={dropdownVisible}
+      triggerDropdown={triggerDropdown}
       pages={pages}
     />
   );

@@ -7,6 +7,7 @@ import { FormComponent, FormWrap } from '../components/form';
 import Input from '../components/input/input';
 import { InputWrap } from '../components/input/input-style';
 import { Link, Text, Title } from '../components/text/';
+import { InlineWrap } from '@/components/text/text-style';
 
 const SignInFormComponent = ({
   captions: { title, text, linkText, href },
@@ -57,7 +58,10 @@ const SignInFormComponent = ({
     </Formik>
 
     <div>
-      <Text display={'inline-block'}>{text}</Text>
+      <InlineWrap>
+        <Text>{text}</Text>
+      </InlineWrap>
+
       <Link href={href}>{linkText}</Link>
     </div>
   </FormWrap>

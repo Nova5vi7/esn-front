@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownItem } from './style-component';
+import { DropdownItem } from './dropdown-styles';
 
 const DropdownItemComponent = ({ children, onClick }) => (
   <DropdownItem onClick={onClick}>{children}</DropdownItem>

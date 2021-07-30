@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Link from '@/components/text/link';
 import UserAvatar from '@/components/user-avatar/user-avatar-container';
 import { Col, Container, Row } from 'style/grid/index';
-import { Header, WrapContent } from './header-style';
+import { Header, WrapContent, ToggleWrap } from './header-style';
 import { MenuWrapper, MenuItem } from '@/components/menu';
 import { DropdownWrap, DropdownItem } from '@/components/dropdown';
 
@@ -13,7 +13,8 @@ const HeaderComponent = ({
   dropdownItem,
   pages,
   dropdownVisible,
-  handleDropdown
+  handleDropdown,
+  triggerDropdown
 }) => (
   <Header>
     <Container>
@@ -33,15 +34,16 @@ const HeaderComponent = ({
           </WrapContent>
         </Col>
         <Col col={{ lg: 8, md: 12, sm: 24 }}>
-          <WrapContent className="right">
-            <UserAvatar
-              src="/images/user-plug.png"
-              alt="User Small"
-              type="small"
-              id="toggleDropdown"
-              handleDropdown={handleDropdown}
-            />
-            {dropdownVisible ? (
+          <WrapContent contentType="right">
+            <ToggleWrap ref={triggerDropdown}>
+              <UserAvatar
+                src="/images/user-plug.png"
+                alt="User Small"
+                type="small"
+                handleDropdown={handleDropdown}
+              />
+            </ToggleWrap>
+            {dropdownVisible && (
               <DropdownWrap>
                 {dropdownItem.map(({ func, text }, id) => (
                   <DropdownItem onClick={func} key={id}>
@@ -49,7 +51,7 @@ const HeaderComponent = ({
                   </DropdownItem>
                 ))}
               </DropdownWrap>
-            ) : null}
+            )}
           </WrapContent>
         </Col>
       </Row>
