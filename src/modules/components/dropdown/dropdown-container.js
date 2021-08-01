@@ -13,6 +13,7 @@ const DropdownContainer = ({ children, showDropdown, setShowDropdown }) => (
 );
 
 DropdownContainer.propTypes = {
+  children: PropTypes.node.isRequired,
   showDropdown: PropTypes.bool,
   setShowDropdown: PropTypes.func
 };

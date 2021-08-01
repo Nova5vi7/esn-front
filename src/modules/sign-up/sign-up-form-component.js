@@ -11,6 +11,8 @@ import { InlineWrap } from '@/components/text/text-style';
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidName from '../verification/verifiers/is-valid-name';
 import isValidPassword from '../verification/verifiers/is-valid-password';
+import PropTypes from 'prop-types';
+import SignInFormComponent from '@/modules/sign-in/sign-in-form-component';
 
 const SignUpFormComponent = ({
   captions: { title, text, linkText, href },
@@ -76,5 +78,12 @@ const SignUpFormComponent = ({
     </div>
   </FormWrap>
 );
+
+SignInFormComponent.propTypes = {
+  caption: PropTypes.object,
+  handleSubmit: PropTypes.func,
+  initialValues: PropTypes.object,
+  isLoading: PropTypes.bool
+};
 
 export default SignUpFormComponent;

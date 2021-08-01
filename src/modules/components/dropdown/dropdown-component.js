@@ -28,6 +28,7 @@ const DropdownComponent = ({ children, showDropdown, setShowDropdown }) => {
 };
 
 DropdownComponent.propTypes = {
+  children: PropTypes.node.isRequired,
   showDropdown: PropTypes.bool,
   setShowDropdown: PropTypes.func
 };

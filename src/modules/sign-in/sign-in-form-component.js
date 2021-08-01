@@ -8,6 +8,7 @@ import Input from '../components/input/input';
 import { InputWrap } from '../components/input/input-style';
 import { Link, Text, Title } from '../components/text/';
 import { InlineWrap } from '@/components/text/text-style';
+import PropTypes from 'prop-types';
 
 const SignInFormComponent = ({
   captions: { title, text, linkText, href },
@@ -66,5 +67,14 @@ const SignInFormComponent = ({
     </div>
   </FormWrap>
 );
+
+SignInFormComponent.propTypes = {
+  caption: PropTypes.object,
+  handleSubmit: PropTypes.func,
+  isValidEmail: PropTypes.func,
+  isValidPassword: PropTypes.func,
+  initialValues: PropTypes.object,
+  isLoading: PropTypes.bool
+};
 
 export default SignInFormComponent;
