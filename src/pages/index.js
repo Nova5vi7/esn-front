@@ -12,6 +12,5 @@ const Home = () => (
       </Head>
     </Container>
   </Wrap>
-
 );
 export default Home;

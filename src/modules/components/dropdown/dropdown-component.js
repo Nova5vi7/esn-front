@@ -13,7 +13,7 @@ const DropdownComponent = ({ children, showDropdown, setShowDropdown }) => {
 
       setShowDropdown(!showDropdown);
     },
-    [showDropdown]
+    [showDropdown, setShowDropdown]
   );
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const DropdownComponent = ({ children, showDropdown, setShowDropdown }) => {
     return () => {
       document.removeEventListener('click', hideDropdown);
     };
-  }, [showDropdown]);
+  }, [showDropdown, hideDropdown]);
 
   return <Dropdown ref={dropdownRef}>{children}</Dropdown>;
 };
