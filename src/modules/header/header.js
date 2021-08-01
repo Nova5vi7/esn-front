@@ -12,9 +12,9 @@ import { DropdownWrap, DropdownItem } from '@/components/dropdown';
 const HeaderComponent = ({
   dropdownItem,
   pages,
-  dropdownVisible,
   handleDropdown,
-  triggerDropdown
+  showDropdown,
+  setShowDropdown
 }) => (
   <Header>
     <Container>
@@ -35,23 +35,23 @@ const HeaderComponent = ({
         </Col>
         <Col col={{ lg: 8, md: 12, sm: 24 }}>
           <WrapContent contentType="right">
-            <ToggleWrap ref={triggerDropdown}>
+            <ToggleWrap onClick={handleDropdown}>
               <UserAvatar
                 src="/images/user-plug.png"
                 alt="User Small"
                 type="small"
-                handleDropdown={handleDropdown}
               />
             </ToggleWrap>
-            {dropdownVisible && (
-              <DropdownWrap>
-                {dropdownItem.map(({ func, text }, id) => (
-                  <DropdownItem onClick={func} key={id}>
-                    {text}
-                  </DropdownItem>
-                ))}
-              </DropdownWrap>
-            )}
+            <DropdownWrap
+              showDropdown={showDropdown}
+              setShowDropdown={setShowDropdown}
+            >
+              {dropdownItem.map(({ func, text }, id) => (
+                <DropdownItem onClick={func} key={id}>
+                  {text}
+                </DropdownItem>
+              ))}
+            </DropdownWrap>
           </WrapContent>
         </Col>
       </Row>
@@ -60,7 +60,11 @@ const HeaderComponent = ({
 );
 
 HeaderComponent.propTypes = {
-  handleDropdown: PropTypes.func.isRequired
+  handleDropdown: PropTypes.func.isRequired,
+  pages: PropTypes.array.isRequired,
+  dropdownItem: PropTypes.array.isRequired,
+  showDropdown: PropTypes.bool,
+  setShowDropdown: PropTypes.func
 };
 
 export default HeaderComponent;

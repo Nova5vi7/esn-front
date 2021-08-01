@@ -9,10 +9,11 @@ import { useDispatch } from 'react-redux';
 import showNotification from 'store/notifications/actions/show';
 
 const HeaderContainer = () => {
-  const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const router = useRouter();
   const dispatch = useDispatch();
+  const triggerDropdown = useRef(null);
 
   const handleLogout = useCallback(async () => {
     try {
@@ -28,31 +29,9 @@ const HeaderContainer = () => {
     dispatch(showNotification('alert', 'Lorem Ipsum'));
   };
 
-  const triggerDropdown = useRef(null);
-
-  const handleDropdown = useCallback(
-    ({ target }) => {
-      if (target !== triggerDropdown.current) {
-        setDropdownVisible(false);
-        return;
-      }
-
-      if (!dropdownVisible) {
-        setDropdownVisible(!dropdownVisible);
-      } else {
-        setDropdownVisible(!dropdownVisible);
-      }
-    },
-    [dropdownVisible]
-  );
-
-  useEffect(() => {
-    document.addEventListener('click', handleDropdown);
-
-    return () => {
-      document.removeEventListener('click', handleDropdown);
-    };
-  }, [dropdownVisible, handleDropdown]);
+  const handleDropdown = useCallback(() => {
+    setShowDropdown(!showDropdown);
+  }, [showDropdown]);
 
   const dropdownItem = [
     {
@@ -69,9 +48,10 @@ const HeaderContainer = () => {
     <HeaderComponent
       dropdownItem={dropdownItem}
       handleDropdown={handleDropdown}
-      dropdownVisible={dropdownVisible}
-      triggerDropdown={triggerDropdown}
+      showDropdown={showDropdown}
+      setShowDropdown={setShowDropdown}
       pages={pages}
+      triggerDropdown={triggerDropdown}
     />
   );
 };
