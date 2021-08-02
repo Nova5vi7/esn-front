@@ -7,9 +7,12 @@ import { FormComponent, FormWrap } from '@/components/form';
 import Input from '@/components/input/input';
 import { InputWrap } from '@/components/input/input-style';
 import { Link, Text, Title } from '@/components/text';
+import { InlineWrap } from '@/components/text/text-style';
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidName from '../verification/verifiers/is-valid-name';
 import isValidPassword from '../verification/verifiers/is-valid-password';
+import PropTypes from 'prop-types';
+import SignInFormComponent from '@/modules/sign-in/sign-in-form-component';
 
 const SignUpFormComponent = ({
   captions: { title, text, linkText, href },
@@ -67,10 +70,20 @@ const SignUpFormComponent = ({
     </Formik>
 
     <div>
-      <Text display={'inline-block'}>{text}</Text>
+      <InlineWrap>
+        <Text display={'inline-block'}>{text}</Text>
+      </InlineWrap>
+
       <Link href={href}>{linkText}</Link>
     </div>
   </FormWrap>
 );
+
+SignInFormComponent.propTypes = {
+  caption: PropTypes.object,
+  handleSubmit: PropTypes.func,
+  initialValues: PropTypes.object,
+  isLoading: PropTypes.bool
+};
 
 export default SignUpFormComponent;

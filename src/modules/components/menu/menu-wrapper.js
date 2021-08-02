@@ -1,7 +1,7 @@
+import { MenuWrapComponent } from './menu-styles';
+
 const MenuWrapper = ({ children, ...rest }) => (
-  <div className="menu__wrapper" {...rest}>
-    {children}
-  </div>
+  <MenuWrapComponent {...rest}>{children}</MenuWrapComponent>
 );
 
 export default MenuWrapper;

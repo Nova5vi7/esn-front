@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 
+import { pages } from '../verification/helpers';
 import HeaderComponent from './header';
 import logoutService from '../../services/auth/logout';
 import { useDispatch } from 'react-redux';
@@ -8,8 +9,11 @@ import { useDispatch } from 'react-redux';
 import showNotification from 'store/notifications/actions/show';
 
 const HeaderContainer = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+
   const router = useRouter();
   const dispatch = useDispatch();
+  const triggerDropdown = useRef(null);
 
   const handleLogout = useCallback(async () => {
     try {
@@ -25,10 +29,29 @@ const HeaderContainer = () => {
     dispatch(showNotification('alert', 'Lorem Ipsum'));
   };
 
+  const handleDropdown = useCallback(() => {
+    setShowDropdown(!showDropdown);
+  }, [showDropdown]);
+
+  const dropdownItem = [
+    {
+      onClick: handleLogout,
+      text: 'Logout'
+    },
+    {
+      onClick: testNotification,
+      text: 'Notification'
+    }
+  ];
+
   return (
     <HeaderComponent
-      testNotification={testNotification}
-      onLogout={handleLogout}
+      dropdownItem={dropdownItem}
+      handleDropdown={handleDropdown}
+      showDropdown={showDropdown}
+      setShowDropdown={setShowDropdown}
+      pages={pages}
+      triggerDropdown={triggerDropdown}
     />
   );
 };

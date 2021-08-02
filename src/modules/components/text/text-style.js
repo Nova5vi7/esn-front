@@ -48,6 +48,10 @@ export const Text = styled.p`
   ${defaultStyle}
 `;
 
+export const InlineWrap = styled.div`
+  display: inline-block;
+`;
+
 export const Link = styled.a`
   background-color: inherit;
   border: none;
