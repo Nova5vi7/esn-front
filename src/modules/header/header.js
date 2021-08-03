@@ -7,10 +7,10 @@ import UserAvatar from '@/components/user-avatar/user-avatar-container';
 import { Col, Container, Row } from 'style/grid/index';
 import { Header, WrapContent, ToggleWrap } from './header-style';
 import { MenuWrapper, MenuItem } from '@/components/menu';
-import { DropdownWrap, DropdownItem } from '@/components/dropdown';
+import { DropdownWrap } from '@/components/dropdown';
 
 const HeaderComponent = ({
-  dropdownItem,
+  dropdownItems,
   pages,
   handleDropdown,
   showDropdown,
@@ -45,13 +45,8 @@ const HeaderComponent = ({
             <DropdownWrap
               showDropdown={showDropdown}
               setShowDropdown={setShowDropdown}
-            >
-              {dropdownItem.map(({ func, text }, id) => (
-                <DropdownItem onClick={func} key={id}>
-                  {text}
-                </DropdownItem>
-              ))}
-            </DropdownWrap>
+              items={dropdownItems}
+            />
           </WrapContent>
         </Col>
       </Row>
@@ -62,7 +57,7 @@ const HeaderComponent = ({
 HeaderComponent.propTypes = {
   handleDropdown: PropTypes.func.isRequired,
   pages: PropTypes.array.isRequired,
-  dropdownItem: PropTypes.array.isRequired,
+  dropdownItems: PropTypes.array.isRequired,
   showDropdown: PropTypes.bool,
   setShowDropdown: PropTypes.func
 };
