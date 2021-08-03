@@ -71,7 +71,7 @@ const SignUpFormComponent = ({
 
     <div>
       <InlineWrap>
-        <Text display={'inline-block'}>{text}</Text>
+        <Text>{text}</Text>
       </InlineWrap>
 
       <Link href={href}>{linkText}</Link>

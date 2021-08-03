@@ -45,13 +45,8 @@ const HeaderComponent = ({
             <DropdownWrap
               showDropdown={showDropdown}
               setShowDropdown={setShowDropdown}
-            >
-              {dropdownItem.map(({ func, text }, id) => (
-                <DropdownItem onClick={func} key={id}>
-                  {text}
-                </DropdownItem>
-              ))}
-            </DropdownWrap>
+              items={dropdownItem}
+            />
           </WrapContent>
         </Col>
       </Row>

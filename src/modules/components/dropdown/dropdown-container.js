@@ -1,19 +1,23 @@
 import React from 'react';
-import { Dropdown } from './index';
+import { Dropdown, DropdownItem } from './index';
 import PropTypes from 'prop-types';
 
-const DropdownContainer = ({ children, showDropdown, setShowDropdown }) => (
+const DropdownContainer = ({ items, showDropdown, setShowDropdown }) => (
   <>
     {showDropdown && (
       <Dropdown setShowDropdown={setShowDropdown} showDropdown={showDropdown}>
-        {children}
+        {items.map(({ onClick, text }, id) => (
+          <DropdownItem onClick={onClick} key={id}>
+            {text}
+          </DropdownItem>
+        ))}
       </Dropdown>
     )}
   </>
 );
 
 DropdownContainer.propTypes = {
-  children: PropTypes.node.isRequired,
+  items: PropTypes.array.isRequired,
   showDropdown: PropTypes.bool,
   setShowDropdown: PropTypes.func
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Wrap from '@/modules/layouts/main';
+import withAuth from '@/modules/wrapper/with-auth';
 import VerificationFormContainer from '@/modules/verification';
 
 const VerificationPage = () => (
@@ -9,4 +10,4 @@ const VerificationPage = () => (
   </Wrap>
 );
 
-export default VerificationPage;
+export default withAuth(VerificationPage);
