@@ -27,7 +27,7 @@ const WithAuth = WrappedComponent => properties => {
         localStorage.removeItem('token');
 
         router.replace('/sign-in');
-        return
+        return;
       }
     }
     setLoadingStatus(false);
