@@ -16,6 +16,7 @@ const WithAuth = WrappedComponent => properties => {
 
     if (!accessToken) {
       router.replace('/sign-in');
+      return;
     } else {
       const userData = await verifyToken();
       dispatch(setUser(userData));
@@ -26,6 +27,7 @@ const WithAuth = WrappedComponent => properties => {
         localStorage.removeItem('token');
 
         router.replace('/sign-in');
+        return;
       }
     }
     setLoadingStatus(false);
