@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import activationUser from '../../services/user/activation-user';
 import UserActivate from './user-activation-component';
-import LoadingComponent from '../components/loader';
+import LoadingComponent from '@/components/loader';
 
 const captions = {
   validMessage: 'Activation was successful. Congratulations !!!!!',

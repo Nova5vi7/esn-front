@@ -8,11 +8,11 @@ import {
 } from '@/components/form/verification-form-style';
 import CropperContainer from '@/components/image-cropper/cropper-container';
 
-import Button from '../components/button/button';
-import { ButtonWrap } from '../components/button/button-style';
-import Input from '../components/input/input';
-import InputPhone from '../components/input/input-phone';
-import { InputsWrap, InputWrap } from '../components/input/input-style';
+import Button from '@/components/button/button';
+import { ButtonWrap } from '@/components/button/button-style';
+import Input from '@/components/input/input';
+import InputPhone from '@/components/input/input-phone';
+import { InputsWrap, InputWrap } from '@/components/input/input-style';
 import isValidName from './verifiers/is-valid-name';
 import isValidPhone from './verifiers/is-valid-phone';
 

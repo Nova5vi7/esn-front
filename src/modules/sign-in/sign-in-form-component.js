@@ -1,12 +1,12 @@
 import { Field, Formik } from 'formik';
 import React from 'react';
 
-import Button from '../components/button/button';
-import { ButtonWrap } from '../components/button/button-style';
-import { FormComponent, FormWrap } from '../components/form';
-import Input from '../components/input/input';
-import { InputWrap } from '../components/input/input-style';
-import { Link, Text, Title } from '../components/text/';
+import Button from '@/components/button/button';
+import { ButtonWrap } from '@/components/button/button-style';
+import { FormComponent, FormWrap } from '@/components/form';
+import Input from '@/components/input/input';
+import { InputWrap } from '@/components/input/input-style';
+import { Link, Text, Title } from '@/components/text/';
 import { InlineWrap } from '@/components/text/text-style';
 import PropTypes from 'prop-types';
 
