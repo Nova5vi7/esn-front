@@ -1,5 +1,5 @@
-import NotificationItem from './notification-item';
 import NotificationWrapper from '../styles/notifications-wrapper-style';
+import NotificationItem from './notification-item';
 
 const NotificationsWrapperComponent = ({ notifications, onHide }) => {
   return (

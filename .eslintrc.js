@@ -23,15 +23,15 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:prettier/recommended',
     'plugin:sonarjs/recommended',
-    'plugin:unicorn/recommended',
     'plugin:security/recommended',
     'plugin:react-hooks/recommended'
   ],
   rules: {
     'no-console': 'error',
+    'simple-import-sort/imports': 'error',
+    'react-hooks/rules-of-hooks': 'off',
+    'react/display-name': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
-    'simple-import-sort/sort': 'error',
-    'unicorn/filename-case': 'off'
+    'react/prop-types': 'off'
   }
 };

@@ -1,9 +1,8 @@
 import actionTypes from '../constants/action-types';
 
-const Notifications = (state = [], action) => {
-  switch (action.type) {
+const Notifications = (state = [], { message, type, ...payload }) => {
+  switch (type) {
     case actionTypes.SHOW_NOTIFICATION:
-      const { message, type } = action.payload;
       return [
         {
           message,
@@ -14,7 +13,7 @@ const Notifications = (state = [], action) => {
       ];
 
     case actionTypes.HIDE_NOTIFICATION:
-      return state.filter(({ id }) => id !== action.payload.id);
+      return state.filter(({ id }) => id !== payload.id);
 
     default:
       return state;

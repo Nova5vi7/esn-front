@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import signUp from 'services/auth/sign-up';
 import setUser from 'store/user/actions/set-user';
 
-import SignUpFormComponent from './sign-up-form-component';
 import showNotification from '@/store/notifications/actions/show';
+
+import SignUpFormComponent from './sign-up-form-component';
 
 const captions = {
   title: 'Sign Up',

@@ -1,13 +1,14 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import signIn from 'services/auth/sign-in';
+
+import showNotification from '@/store/notifications/actions/show';
+import setUser from '@/store/user/actions/set-user';
 
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidPassword from '../verification/verifiers/is-valid-password';
 import SignInFormComponent from './sign-in-form-component';
-import { useDispatch } from 'react-redux';
-import setUser from '@/store/user/actions/set-user';
-import showNotification from '@/store/notifications/actions/show';
 
 const captions = {
   title: 'Sign In',

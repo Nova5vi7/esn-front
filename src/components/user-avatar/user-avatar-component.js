@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import { UserAvatarWrap } from './avatar-styles';
 
 const UserAvatarComponent = ({ src, alt, type }) => (

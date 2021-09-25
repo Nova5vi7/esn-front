@@ -1,13 +1,14 @@
 import Image from 'next/image';
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+import { Col, Container, Row } from 'style/grid/index';
 
+import { DropdownItem, DropdownWrap } from '@/components/dropdown';
+import { MenuItem, MenuWrapper } from '@/components/menu';
 import Link from '@/components/text/link';
 import UserAvatar from '@/components/user-avatar/user-avatar-container';
-import { Col, Container, Row } from 'style/grid/index';
-import { Header, WrapContent, ToggleWrap } from './header-style';
-import { MenuWrapper, MenuItem } from '@/components/menu';
-import { DropdownWrap, DropdownItem } from '@/components/dropdown';
+
+import { Header, ToggleWrap, WrapContent } from './header-style';
 
 const HeaderComponent = ({
   dropdownItem,

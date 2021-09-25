@@ -1,4 +1,5 @@
 import { Field, Formik } from 'formik';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '@/components/button/button';
@@ -8,11 +9,11 @@ import Input from '@/components/input/input';
 import { InputWrap } from '@/components/input/input-style';
 import { Link, Text, Title } from '@/components/text';
 import { InlineWrap } from '@/components/text/text-style';
+import SignInFormComponent from '@/modules/sign-in/sign-in-form-component';
+
 import isValidEmail from '../verification/verifiers/is-valid-email';
 import isValidName from '../verification/verifiers/is-valid-name';
 import isValidPassword from '../verification/verifiers/is-valid-password';
-import PropTypes from 'prop-types';
-import SignInFormComponent from '@/modules/sign-in/sign-in-form-component';
 
 const SignUpFormComponent = ({
   captions: { title, text, linkText, href },

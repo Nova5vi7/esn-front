@@ -1,4 +1,5 @@
 import { Field, Formik } from 'formik';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Button from '@/components/button/button';
@@ -8,7 +9,6 @@ import Input from '@/components/input/input';
 import { InputWrap } from '@/components/input/input-style';
 import { Link, Text, Title } from '@/components/text/';
 import { InlineWrap } from '@/components/text/text-style';
-import PropTypes from 'prop-types';
 
 const SignInFormComponent = ({
   captions: { title, text, linkText, href },

@@ -41,6 +41,7 @@ const Svg = styled.svg`
   display: block;
   ${({ theme, size = sizes.sm }) => {
     const sizeCalculated = iconSizeCalc(size, theme);
+    // eslint-disable-next-line sonarjs/no-nested-template-literals
     return `
         flex-shrink: 0;
         width: ${sizeCalculated};

@@ -23,7 +23,7 @@ const captions = {
   }
 };
 
-const verificationFormContainer = () => {
+const VerificationFormContainer = () => {
   const [filePath, setFilePath] = useState(null);
   const [cropState, setCropState] = useState(false);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -78,6 +78,7 @@ const verificationFormContainer = () => {
       setCroppedImagePath(b64);
       setCropState(null);
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
     }
   }, [croppedAreaPixels, filePath]);
@@ -104,4 +105,4 @@ const verificationFormContainer = () => {
   );
 };
 
-export default verificationFormContainer;
+export default VerificationFormContainer;

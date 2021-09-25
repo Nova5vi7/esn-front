@@ -1,6 +1,7 @@
 import React from 'react';
-import { Loader } from './loader-component';
+
 import { Text } from '../text';
+import { Loader } from './loader-component';
 
 const LoaderComponent = () => (
   <Loader>

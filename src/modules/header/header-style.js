@@ -15,12 +15,8 @@ const rightContent = css`
 `;
 
 const getJustifyContent = contentType => {
-  switch (contentType) {
-    case 'right':
-      return rightContent;
-    default:
-      return initialStyle;
-  }
+  if (contentType === 'right') return rightContent;
+  return initialStyle;
 };
 
 export const ToggleWrap = styled.div`

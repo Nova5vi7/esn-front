@@ -10,6 +10,7 @@ const updateUser = async data => {
 
     return result.data;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
   }
 };

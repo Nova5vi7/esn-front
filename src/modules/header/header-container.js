@@ -1,12 +1,11 @@
-import React, { useCallback, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
+import React, { useCallback, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import showNotification from 'store/notifications/actions/show';
 
+import logoutService from '../../services/auth/logout';
 import { pages } from '../verification/helpers';
 import HeaderComponent from './header';
-import logoutService from '../../services/auth/logout';
-import { useDispatch } from 'react-redux';
-
-import showNotification from 'store/notifications/actions/show';
 
 const HeaderContainer = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -21,6 +20,7 @@ const HeaderContainer = () => {
       window.localStorage.removeItem('token');
       await router.push('/');
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
   }, [router]);

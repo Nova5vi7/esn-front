@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
-import { Text, Title } from '@/components/text';
+
 import Icon from '@/components/icon';
-import NotificationItem from '../styles/notification-item-style';
+import { Text, Title } from '@/components/text';
+
 import CloseButton from '../styles/close-button';
+import NotificationItem from '../styles/notification-item-style';
 
 const NotificationItemComponent = ({ type, message, onClose }) => (
   <NotificationItem type={type}>

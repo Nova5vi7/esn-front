@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
+import React, { useCallback, useEffect, useState } from 'react';
+
+import LoadingComponent from '@/components/loader';
 
 import activationUser from '../../services/user/activation-user';
 import UserActivate from './user-activation-component';
-import LoadingComponent from '@/components/loader';
 
 const captions = {
   validMessage: 'Activation was successful. Congratulations !!!!!',

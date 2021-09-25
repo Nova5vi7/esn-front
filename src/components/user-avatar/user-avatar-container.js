@@ -1,5 +1,6 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
+
 import UserAvatar from './user-avatar-component';
 
 const userAvatarContainer = ({ src, alt, type }) => (

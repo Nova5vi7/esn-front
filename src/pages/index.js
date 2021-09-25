@@ -1,7 +1,8 @@
-import { Container } from 'style/grid/index';
 import Head from 'next/head';
-import Wrap from '@/modules/layouts/main';
 import React from 'react';
+import { Container } from 'style/grid/index';
+
+import Wrap from '@/modules/layouts/main';
 
 const Home = () => (
   <Wrap>

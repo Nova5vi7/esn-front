@@ -1,7 +1,9 @@
-import NotificationsWrapper from './components/notifications-wrapper';
 import { useDispatch, useSelector } from 'react-redux';
-import getNotifications from '@/store/notifications/selectors/get-notifications';
+
 import hideNotification from '@/store/notifications/actions/hide';
+import getNotifications from '@/store/notifications/selectors/get-notifications';
+
+import NotificationsWrapper from './components/notifications-wrapper';
 
 const NotificationContainer = () => {
   const notifications = useSelector(getNotifications);

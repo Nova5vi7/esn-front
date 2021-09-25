@@ -10,12 +10,9 @@ const initialStyle = css`
 `;
 
 const getSize = type => {
-  switch (type) {
-    case 'small':
-      return smallSize;
-    default:
-      return initialStyle;
-  }
+  if (type === 'small') return smallSize;
+
+  return initialStyle;
 };
 
 export const UserAvatarWrap = styled.div`

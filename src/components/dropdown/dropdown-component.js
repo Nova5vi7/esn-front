@@ -1,6 +1,7 @@
-import React, { useCallback, useEffect, useRef } from 'react';
-import { Dropdown } from './dropdown-styles';
 import PropTypes from 'prop-types';
+import React, { useCallback, useEffect, useRef } from 'react';
+
+import { Dropdown } from './dropdown-styles';
 
 const DropdownComponent = ({ children, showDropdown, setShowDropdown }) => {
   const dropdownRef = useRef(null);

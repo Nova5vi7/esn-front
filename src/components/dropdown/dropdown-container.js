@@ -1,6 +1,7 @@
-import React from 'react';
-import { Dropdown } from './index';
 import PropTypes from 'prop-types';
+import React from 'react';
+
+import { Dropdown } from './index';
 
 const DropdownContainer = ({ children, showDropdown, setShowDropdown }) => (
   <>
